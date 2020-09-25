@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ico_Add_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Add_1.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_ArrowDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow_12.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_ArrowLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Arrow_11.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_ArrowRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Arrow_9.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_ArrowUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Arrow_7.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_Arrow_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Arrow_6.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_Delete_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete_2.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_Door" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Door.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_Exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Exit.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_House" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\House_2.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_Immense" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Immense.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_LightBulb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LightBulb.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_Light_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Light_1.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_Ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ok.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_Pen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pen.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_PGDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Arrow_15.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_PGUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Arrow_16.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_Print" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Print.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_Report_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Report_4.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_Save_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save_1.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_Tare" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tare.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_Tare_Large" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tare_Large.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_Tare_Medium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tare_Medium.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_Yes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Yes.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_Zero" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Zero.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Nullstellen_Transparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Nullstellen_Transparent.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tarieren_Transparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tarieren_Transparent.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sZPL_Data" xml:space="preserve">
+    <value>&#x10;CT~~CD,~CC^~CT~
+^XA~TA000~JSN^LT0^MNW^MTD^PON^PMN^LH0,0^JMA^PR3,3~SD20^JUS^LRN^CI0^XZ
+^XA
+^MMT
+^PW1181
+^LL1181
+^LS0
+^FT107,1086^A0N,58,57^FH\^FD@DATE@^FS
+^FT694,976^A0N,100,98^FH\^FD@GEW@^FS
+^FT692,832^A0N,100,98^FH\^FD@STK@^FS
+^FT692,695^A0N,100,98^FH\^FD@PALNR@^FS
+^FT123,442^A0N,83,81^FH\^FD@ARTBEZ@^FS
+^FT127,534^A0N,67,67^FH\^FD@ARTNR@^FS
+^FT242,179^A0N,75,74^FH\^FD@GRUPPENN2@^FS
+^FT241,99^A0N,75,74^FH\^FD@GRUPPENN1@^FS
+^FT549,1090^A0N,67,67^FH\^FDU:________________^FS
+^FT97,965^A0N,67,67^FH\^FDGEWICHT(weight):^FS
+^FT97,813^A0N,67,67^FH\^FDST\9ACK (pieces):^FS
+^FT97,682^A0N,67,67^FH\^FDPAL. Nr.:^FS
+^FT408,278^A0N,67,67^FH\^FDWollsdorf Leather^FS
+^PQ1,0,1,Y^XZ</value>
+    <comment>Enthält die Daten für das Label
+(siehe WIKI
+http://smtwiki.smt-medtech.com/index.php?title=Drucker.ZPL_Etiketten_f%C3%BCr_Terminals)</comment>
+  </data>
+  <data name="sZPL_Label" xml:space="preserve">
+    <value>&#x10;CT~~CD,~CC^~CT~
+^XA
+^DFE:Wollsdor.ZPL^FS
+~TA000~JSN^LT0^MNW^MTD^PON^PMN^LH0,0^JMA^PR3,3^MD20^LRN^CI0
+^MMT
+^PW1181
+^LL1181
+^LS0
+^FT107,1086^A0N,58,57^FB416,1,0^FH\^FN18"@DATE@"^FS
+^FT694,976^A0N,100,98^FB440,1,0^FH\^FN16"@GEW@"^FS
+^FT692,832^A0N,100,98^FB441,1,0^FH\^FN15"@STK@"^FS
+^FT692,695^A0N,100,98^FB441,1,0^FH\^FN13"@PALNR@"^FS
+^FT123,442^A0N,83,81^FB926,1,0^FH\^FN17"@ARTBEZ@"^FS
+^FT127,534^A0N,67,67^FB300,1,0^FH\^FN14"@ARTNR@"^FS
+^FT242,179^A0N,75,74^FB825,1,0^FH\^FN12"@GRUPPENN2@"^FS
+^FT241,99^A0N,75,74^FB825,1,0^FH\^FN11"@GRUPPENN1@"^FS
+^FT549,1090^A0N,67,67^FB606,1,0^FH\^FDU:________________^FS
+^FT97,965^A0N,67,67^FB503,1,0^FH\^FDGEWICHT(weight):^FS
+^FT97,813^A0N,67,67^FB441,1,0^FH\^FDST\9ACK (pieces):^FS
+^FT97,682^A0N,67,67^FB253,1,0^FH\^FDPAL. Nr.:^FS
+^FT408,278^A0N,67,67^FB485,1,0^FH\^FDWollsdorf Leather^FS
+^XZ</value>
+    <comment>Enthält den LABEL E:Wollsdor.ZPL
+(siehe WIKI
+http://smtwiki.smt-medtech.com/index.php?title=Drucker.ZPL_Etiketten_f%C3%BCr_Terminals)</comment>
+  </data>
+  <data name="old_sZPL_Data" xml:space="preserve">
+    <value>^XA
+^XFR:Wollsdor.ZPL^FS
+^FN11^FD@PALNR@^FS
+^FN12^FD@ARTNR@^FS
+^FN13^FD@STK@^FS
+^FN14^FD@GEWICHT@^FS
+^FN15^FD@ARTBEZ@^FS
+^PQ1^XZ</value>
+    <comment>Enthält die Daten für das Label
+(siehe WIKI
+http://smtwiki.smt-medtech.com/index.php?title=Drucker.ZPL_Etiketten_f%C3%BCr_Terminals)</comment>
+  </data>
+  <data name="old_sZPL_Label" xml:space="preserve">
+    <value>&#x10;CT~~CD,~CC^~CT~
+^XA
+^DFR:Wollsdor.ZPL^FS
+~TA000~JSN^LT0^MNW^MTD^PON^PMN^LH0,0^JMA^PR3,3^MD20^LRN^CI0
+^MMT
+^PW1181
+^LL1181
+^LS0
+^FT694,976^A0N,100,98^FB440,1,0^FH\^FN14"@GEWICHT@"^FS
+^FT692,832^A0N,100,98^FB441,1,0^FH\^FN13"@STK@"^FS
+^FT692,695^A0N,100,98^FB441,1,0^FH\^FN11"@PALNR@"^FS
+^FT123,442^A0N,83,81^FB371,1,0^FH\^FN15"@ARTBEZ@"^FS
+^FT463,255^A0N,67,67^FB300,1,0^FH\^FN12"@ARTNR@"^FS
+^FT97,965^A0N,67,67^FB503,1,0^FH\^FDGEWICHT(weight):^FS
+^FT97,813^A0N,67,67^FB441,1,0^FH\^FDST\9ACK (pieces):^FS
+^FT948,991^A0N,58,57^FB56,1,0^FH\^FDkg^FS
+^FT97,682^A0N,67,67^FB253,1,0^FH\^FDPAL. Nr.:^FS
+^FT254,171^A0N,67,67^FB689,1,0^FH\^FD(WB-Split Double Butts)^FS
+^FT241,99^A0N,75,74^FB714,1,0^FH\^FDWB-SPALTCROUPONS^FS
+^XZ</value>
+    <comment>Enthält den LABEL R:Wollsdor.ZPL
+(siehe WIKI
+http://smtwiki.smt-medtech.com/index.php?title=Drucker.ZPL_Etiketten_f%C3%BCr_Terminals)</comment>
+  </data>
+</root>

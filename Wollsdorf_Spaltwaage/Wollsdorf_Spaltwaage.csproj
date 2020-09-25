@@ -1,0 +1,358 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{42E1DBE9-6FD9-47A7-8626-C98ED039D303}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Wollsdorf_Spaltwaage</RootNamespace>
+    <AssemblyName>Wollsdorf_Spaltwaage</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>WindowsCE</PlatformFamilyName>
+    <PlatformID>E2BECB1F-8C8C-41ba-B736-9BE7D946A398</PlatformID>
+    <OSVersion>5.0</OSVersion>
+    <DeployDirSuffix>Wollsdorf_Spaltwaage</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NativePlatformName>Windows CE</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IND890APIClientCE, Version=1.0.5317.34836, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LIB\IND890APIClientCE.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsCE.Forms" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=3.0.3600.0, Culture=neutral, PublicKeyToken=3be235df1c8d2ad3, processorArchitecture=MSIL" />
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.0.0, Culture=neutral, PublicKeyToken=3be235df1c8d2ad3, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Allgemein\AppStandards.cs" />
+    <Compile Include="Allgemein\ButtonBar\ctrlButtonBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Allgemein\ButtonBar\ctrlButtonBar.designer.cs">
+      <DependentUpon>ctrlButtonBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Allgemein\Button\ctrlButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Allgemein\Button\GradientFill.cs" />
+    <Compile Include="Allgemein\Button\Win32.cs" />
+    <Compile Include="Allgemein\Button\WndProcHooker.cs" />
+    <Compile Include="Allgemein\cGlobalNummerkreis.cs" />
+    <Compile Include="Allgemein\cStringHelper.cs" />
+    <Compile Include="Allgemein\DIO_RS485\cSMT_DIO.cs" />
+    <Compile Include="Allgemein\DIO_RS485\DIO Test\frmDIOTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Allgemein\DIO_RS485\DIO Test\frmDIOTest.Designer.cs">
+      <DependentUpon>frmDIOTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Allgemein\Forms\cFormStyle.cs" />
+    <Compile Include="Allgemein\Forms\cFullScreen.cs" />
+    <Compile Include="Allgemein\frmInfoDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Allgemein\frmInfoDlg.Designer.cs">
+      <DependentUpon>frmInfoDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Allgemein\frmTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Allgemein\frmTemplate.Designer.cs">
+      <DependentUpon>frmTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Allgemein\frmYesNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Allgemein\frmYesNo.designer.cs">
+      <DependentUpon>frmYesNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Allgemein\frmYesNoSicher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Allgemein\frmYesNoSicher.designer.cs">
+      <DependentUpon>frmYesNoSicher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Allgemein\HELPER_BIT_FIELD.cs" />
+    <Compile Include="Allgemein\Mettler\IND890APIClientEnum.cs" />
+    <Compile Include="Allgemein\PasswortForm\frmPasswort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Allgemein\PasswortForm\frmPasswort.Designer.cs">
+      <DependentUpon>frmPasswort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Allgemein\ScaleEngine\cGlobalScale.cs" />
+    <Compile Include="Allgemein\ScaleEngine\cScale.cs" />
+    <Compile Include="Allgemein\ScaleEngine\frmStartOptionen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Allgemein\ScaleEngine\frmStartOptionen.Designer.cs">
+      <DependentUpon>frmStartOptionen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Allgemein\SQL\cDB_Settings.cs" />
+    <Compile Include="Allgemein\SQL\cDB_SQL_CE.cs" />
+    <Compile Include="Allgemein\SQL\SiMainHelper.cs" />
+    <Compile Include="Allgemein\SystemHelper\SystemHelper.cs" />
+    <Compile Include="Allgemein\Touch_Numeric\ctrlDoubleNumPad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Allgemein\Touch_Numeric\ctrlDoubleNumPad.designer.cs">
+      <DependentUpon>ctrlDoubleNumPad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Allgemein\Touch_Numeric\ctrlNumPad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Allgemein\Touch_Numeric\ctrlNumPad.Designer.cs">
+      <DependentUpon>ctrlNumPad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kundenspezifisch\cGlobalHandling.cs" />
+    <Compile Include="Kundenspezifisch\ENUM_HELPER.cs" />
+    <Compile Include="Kundenspezifisch\Gemeinsam\Servicefunktionen\frmServiceFunktionen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kundenspezifisch\Gemeinsam\Servicefunktionen\frmServiceFunktionen.Designer.cs">
+      <DependentUpon>frmServiceFunktionen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kundenspezifisch\Gemeinsam\Settings\cData_Settings.cs" />
+    <Compile Include="Kundenspezifisch\Gemeinsam\Settings\cData_Settings_Handling.cs" />
+    <Compile Include="Kundenspezifisch\Gemeinsam\Setup\frmSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kundenspezifisch\Gemeinsam\Setup\frmSetup.Designer.cs">
+      <DependentUpon>frmSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kundenspezifisch\Gemeinsam\Taravorgabe\frmTaravorgabe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kundenspezifisch\Gemeinsam\Taravorgabe\frmTaravorgabe.Designer.cs">
+      <DependentUpon>frmTaravorgabe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kundenspezifisch\SETTINGS.cs" />
+    <Compile Include="Kundenspezifisch\Übernahmewaage\Controls\ctrlPalette.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kundenspezifisch\Übernahmewaage\Controls\ctrlPalette.Designer.cs">
+      <DependentUpon>ctrlPalette.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kundenspezifisch\Übernahmewaage\Controls\ctrlListenScroll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kundenspezifisch\Übernahmewaage\Controls\ctrlListenScroll.Designer.cs">
+      <DependentUpon>ctrlListenScroll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kundenspezifisch\Übernahmewaage\CSV Export\cDatenexport.cs" />
+    <Compile Include="Kundenspezifisch\Übernahmewaage\Data\cBeladungsDaten.cs" />
+    <Compile Include="Kundenspezifisch\Übernahmewaage\Data\cData_Wiegung_Item.cs" />
+    <Compile Include="Kundenspezifisch\Übernahmewaage\Data\cPalettenData.cs" />
+    <Compile Include="Kundenspezifisch\Übernahmewaage\Data\cWiegeitem.cs" />
+    <Compile Include="Kundenspezifisch\Übernahmewaage\Data\cWiegung.cs" />
+    <Compile Include="Kundenspezifisch\Übernahmewaage\Data\cWiegung_Handling.cs" />
+    <Compile Include="Kundenspezifisch\Übernahmewaage\Druck\cDruck_AbschlussBericht.cs" />
+    <Compile Include="Kundenspezifisch\Übernahmewaage\Druck\cDruck_DruckerTest.cs" />
+    <Compile Include="Kundenspezifisch\Übernahmewaage\Druck\cDruck_SeitenLangeTest.cs" />
+    <Compile Include="Kundenspezifisch\Übernahmewaage\Druck\cDruck_SummenÜbersicht.cs" />
+    <Compile Include="Kundenspezifisch\Übernahmewaage\Druck\cDruck_ZPL.cs" />
+    <Compile Include="Kundenspezifisch\Übernahmewaage\Druck\cDruck_ZwischenBericht.cs" />
+    <Compile Include="Kundenspezifisch\Übernahmewaage\Fenster\Palettenauswahl\frmPalettenauswahl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kundenspezifisch\Übernahmewaage\Fenster\Palettenauswahl\frmPalettenauswahl.Designer.cs">
+      <DependentUpon>frmPalettenauswahl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kundenspezifisch\Übernahmewaage\Fenster\SAP_Parameter\frmSAPEingabe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kundenspezifisch\Übernahmewaage\Fenster\SAP_Parameter\frmSAPEingabe.Designer.cs">
+      <DependentUpon>frmSAPEingabe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kundenspezifisch\Übernahmewaage\Fenster\Wiegen\frmWiegen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kundenspezifisch\Übernahmewaage\Fenster\Wiegen\frmWiegen.Designer.cs">
+      <DependentUpon>frmWiegen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Allgemein\ButtonBar\ctrlButtonBar.resx">
+      <DependentUpon>ctrlButtonBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Allgemein\DIO_RS485\DIO Test\frmDIOTest.resx">
+      <DependentUpon>frmDIOTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Allgemein\frmInfoDlg.resx">
+      <DependentUpon>frmInfoDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Allgemein\frmTemplate.resx">
+      <DependentUpon>frmTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Allgemein\frmYesNo.resx">
+      <DependentUpon>frmYesNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Allgemein\frmYesNoSicher.resx">
+      <DependentUpon>frmYesNoSicher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Allgemein\PasswortForm\frmPasswort.resx">
+      <DependentUpon>frmPasswort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Allgemein\ScaleEngine\frmStartOptionen.resx">
+      <DependentUpon>frmStartOptionen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Allgemein\Touch_Numeric\ctrlDoubleNumPad.resx">
+      <DependentUpon>ctrlDoubleNumPad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Allgemein\Touch_Numeric\ctrlNumPad.resx">
+      <DependentUpon>ctrlNumPad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kundenspezifisch\Gemeinsam\Servicefunktionen\frmServiceFunktionen.resx">
+      <DependentUpon>frmServiceFunktionen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kundenspezifisch\Gemeinsam\Setup\frmSetup.resx">
+      <DependentUpon>frmSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kundenspezifisch\Gemeinsam\Taravorgabe\frmTaravorgabe.resx">
+      <DependentUpon>frmTaravorgabe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kundenspezifisch\Übernahmewaage\Controls\ctrlPalette.resx">
+      <DependentUpon>ctrlPalette.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kundenspezifisch\Übernahmewaage\Controls\ctrlListenScroll.resx">
+      <DependentUpon>ctrlListenScroll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kundenspezifisch\Übernahmewaage\Fenster\Palettenauswahl\frmPalettenauswahl.resx">
+      <DependentUpon>frmPalettenauswahl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kundenspezifisch\Übernahmewaage\Fenster\SAP_Parameter\frmSAPEingabe.resx">
+      <DependentUpon>frmSAPEingabe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kundenspezifisch\Übernahmewaage\Fenster\Wiegen\frmWiegen.resx">
+      <DependentUpon>frmWiegen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Smt_IND890_Data.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Add_1.ico" />
+    <Content Include="Resources\Arrow_11.ico" />
+    <Content Include="Resources\arrow_12.ico" />
+    <Content Include="Resources\Arrow_15.ico" />
+    <Content Include="Resources\Arrow_16.ico" />
+    <Content Include="Resources\Arrow_6.ico" />
+    <Content Include="Resources\Arrow_7.ico" />
+    <Content Include="Resources\Arrow_9.ico" />
+    <Content Include="Resources\Delete_2.ico" />
+    <Content Include="Resources\Door.ico" />
+    <Content Include="Resources\Exit.ico" />
+    <Content Include="Resources\House_2.ico" />
+    <Content Include="Resources\Immense.ico" />
+    <Content Include="Resources\LightBulb.ico" />
+    <Content Include="Resources\Light_1.ico" />
+    <Content Include="Resources\Nullstellen_Transparent.gif" />
+    <Content Include="Resources\Ok.ico" />
+    <Content Include="Resources\Pen.ico" />
+    <Content Include="Resources\Print.ico" />
+    <Content Include="Resources\Report_4.ico" />
+    <Content Include="Resources\Save_1.ico" />
+    <Content Include="Resources\Tare.ico" />
+    <Content Include="Resources\Tare_Large.ico" />
+    <Content Include="Resources\Tare_Medium.ico" />
+    <Content Include="Resources\Tarieren_Transparent.gif" />
+    <Content Include="Resources\Yes.ico" />
+    <Content Include="Resources\Zero.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Wollsdorf_Spaltwaage.nrproj" />
+    <None Include="Wollsdorf_Spaltwaage_2017-04-11.lbl" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
