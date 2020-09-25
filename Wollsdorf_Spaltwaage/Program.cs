@@ -13,7 +13,7 @@ namespace Wollsdorf
         [MTAThread]
         static void Main()
         {
-            //Beispiel
+            //Beispiel 123
             string sAppPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
 
             //string m_customDBPath = @"\Storage Card\CustomNET\Data\smt_ind890_data.sdf";
