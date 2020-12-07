@@ -1,30 +1,28 @@
-﻿namespace Wollsdorf
-{
-    using System;
-    using System.Linq;
-    using System.Collections.Generic;
-    using System.Text;
-    using Wollsdorf.Spaltwaage;
+﻿using System;
+using Wollsdorf_Spaltwaage.Allgemein.SQL;
+using Wollsdorf_Spaltwaage.Kundenspezifisch.Gemeinsam.Settings;
 
+namespace Wollsdorf_Spaltwaage.Kundenspezifisch
+{
     internal class ENUM_HELPER
     {
-        public static Data.cData_Settings.eArbeitsplatztyp Arbeitsplatztyp_StringToEnum(string sWert)
+        public static cData_Settings.eArbeitsplatztyp Arbeitsplatztyp_StringToEnum(string sWert)
         {
-            Data.cData_Settings.eArbeitsplatztyp eResult = Data.cData_Settings.eArbeitsplatztyp.none;
+            cData_Settings.eArbeitsplatztyp eResult = cData_Settings.eArbeitsplatztyp.none;
 
             try
             {
                 // YourEnum foo = (YourEnum) Enum.Parse(typeof(YourEnum), yourString);
-                eResult = (Data.cData_Settings.eArbeitsplatztyp)Enum.Parse(typeof(Data.cData_Settings.eArbeitsplatztyp), sWert, true);
+                eResult = (cData_Settings.eArbeitsplatztyp)Enum.Parse(typeof(cData_Settings.eArbeitsplatztyp), sWert, true);
             }
             catch (Exception ex)
             {
-                Allgemein.SiAuto.LogException(ex);
+                SiAuto.LogException(ex);
             }
 
             return eResult;
         }
-        public static int Arbeitsplatztyp_EnumToInt(Data.cData_Settings.eArbeitsplatztyp eWert)
+        public static int Arbeitsplatztyp_EnumToInt(cData_Settings.eArbeitsplatztyp eWert)
         {
             int iReturn = 0;
 
@@ -34,7 +32,7 @@
             }
             catch (Exception ex)
             {
-                Allgemein.SiAuto.LogException(ex);
+                SiAuto.LogException(ex);
             }
 
             return iReturn;

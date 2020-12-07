@@ -1,26 +1,23 @@
 ﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using Allgemein;
-using MTTS.IND890.CE;
 using System.Threading;
+using System.Windows.Forms;
+using MTTS.IND890.CE;
+using Wollsdorf_Spaltwaage.Allgemein.ScaleEngine;
+using Wollsdorf_Spaltwaage.Allgemein.SQL;
+using Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Controls;
+using Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Data;
 
-namespace Wollsdorf.Spaltwaage
+namespace Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Fenster.Wiegen
 {
     internal partial class frmWiegen : Form
     {
         private bool bISActiveted;
         private cWiegung objWiegung;
-        private Controls.ctrlPalette objSelAktivUserControl;
+        private ctrlPalette objSelAktivUserControl;
             
         public frmWiegen(
             ref cWiegung Wiegung, 
-            ref Controls.ctrlPalette SelControl)
+            ref ctrlPalette SelControl)
         {
             InitializeComponent();
 
@@ -30,6 +27,7 @@ namespace Wollsdorf.Spaltwaage
 
             this.cmdCancel.Visible = false;
             this.cmdRetry.Visible = false;
+            this.cmdSimu1.Visible = SETTINGS.IS_EntwicklungsPC();
         }
 
         private void frmWiegen_Load(object sender, EventArgs e)
@@ -75,12 +73,12 @@ namespace Wollsdorf.Spaltwaage
         private void cmdsimuW1_Click(object sender, EventArgs e)
         {
             /*Ab Null wird der Wert als Simulationswert verwendet*/
-            this.starteWiegeablauf(1970);
+            this.starteWiegeablauf(400);
         }
         private void cmdsimuW1b_Click(object sender, EventArgs e)
         {
             /*Ab Null wird der Wert als Simulationswert verwendet*/
-            this.starteWiegeablauf(3200);
+            this.starteWiegeablauf(400);
         }
         private void cmdRetry_Click(object sender, EventArgs e)
         {
@@ -186,7 +184,6 @@ namespace Wollsdorf.Spaltwaage
             
             try
             {
-                //scaleWeight = cGlobalScale.GetStabile();
                 scaleWeight = cGlobalScale.GetDynamic();
                 
                 if (scaleWeight == null)

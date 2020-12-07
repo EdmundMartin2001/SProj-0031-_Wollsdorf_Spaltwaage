@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics;
 using System.Collections;
 using System.Text.RegularExpressions;
-using Allgemein;
+using Wollsdorf_Spaltwaage.Allgemein.SQL;
 
 namespace SMT_SQL_2V.Helper
 {

@@ -1,14 +1,14 @@
 #region Usings
+
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
+using Wollsdorf_Spaltwaage.Allgemein.Button;
+
 #endregion
 
-namespace Allgemein.Controls
+namespace Wollsdorf_Spaltwaage.Allgemein.ButtonBar
 {
     public partial class ctrlButtonBar : UserControl
     {
@@ -54,7 +54,7 @@ namespace Allgemein.Controls
         /// </summary>
         /// <param name="b"></param>
         #region Set_Button_Defaults
-        private void Set_Button_Defaults(Allgemein.Controls.ctrlButton b)
+        private void Set_Button_Defaults(ctrlButton b)
         {
             b.TabStop = false;
             b.StartColor = Color.DimGray;            
@@ -64,7 +64,7 @@ namespace Allgemein.Controls
 
         public void BUTTON_DEAKTIVIEREN(int iButton, bool bISEnabled)
         {
-            Allgemein.Controls.ctrlButton b = null;
+            ctrlButton b = null;
 
             switch (iButton)
             {
@@ -138,35 +138,35 @@ namespace Allgemein.Controls
 		    set { Button8.BackColor = value;}
 		}                                                        
 
-        internal Allgemein.Controls.ctrlButton Button_F1
+        internal ctrlButton Button_F1
         {
             get { return Button1;} set { Button1 = value; }
         }
-        internal Allgemein.Controls.ctrlButton Button_F2
+        internal ctrlButton Button_F2
         {
             get { return Button2;} set { Button2 = value; }
         }
-        internal Allgemein.Controls.ctrlButton Button_F3
+        internal ctrlButton Button_F3
         {
             get { return Button3;} set { Button3 = value; }
         }
-        internal Allgemein.Controls.ctrlButton Button_F4
+        internal ctrlButton Button_F4
         {
             get { return Button4;} set { Button4 = value; }
         }
-        internal Allgemein.Controls.ctrlButton Button_F5
+        internal ctrlButton Button_F5
         {
             get { return Button5;} set { Button5 = value; }
         }
-        internal Allgemein.Controls.ctrlButton Button_F6
+        internal ctrlButton Button_F6
         {
             get { return Button6;} set { Button6 = value; }
         }
-        internal Allgemein.Controls.ctrlButton Button_F7
+        internal ctrlButton Button_F7
         {
             get { return Button7;} set { Button7 = value; }
         }
-        internal Allgemein.Controls.ctrlButton Button_F8
+        internal ctrlButton Button_F8
         {
             get { return Button8;} set { Button8 = value; }
         }     
@@ -237,7 +237,7 @@ namespace Allgemein.Controls
 		}
 		public void RaiseExternButtonEvent(object sender, string sButtonName, int iButtonID)
 		{
-            Allgemein.Controls.ctrlButton b = null;
+            ctrlButton b = null;
 		
 		    switch (iButtonID )
 		    {
@@ -268,15 +268,15 @@ namespace Allgemein.Controls
 			    string    sName = "";
 				int       iTaste = 0;
 
-                if (sender.GetType() != typeof(Allgemein.Controls.ctrlButton)) return;
+                if (sender.GetType() != typeof(ctrlButton)) return;
 
-                sName = ((Allgemein.Controls.ctrlButton)sender).Name;
+                sName = ((ctrlButton)sender).Name;
 
-                //((Allgemein.Controls.ctrlButton)sender).Enabled = false;
+                //((ctrlButton)sender).Enabled = false;
 				
 				if ( EventButtonClick != null )
 				{
-                    switch (((Allgemein.Controls.ctrlButton)sender).Name)
+                    switch (((ctrlButton)sender).Name)
 				    {
 					case ("Button1"): iTaste = 1;  EventButtonClick(sender , sName , iTaste,  ButtonTag[0] ); break;
 					case ("Button2"):	iTaste = 2;  EventButtonClick(sender , sName , iTaste,  ButtonTag[1] ); break;
@@ -297,7 +297,7 @@ namespace Allgemein.Controls
 			}
             //if (!this.IsDisposed)
             //{
-            //    ((Allgemein.Controls.ctrlButton)sender).Enabled = true;
+            //    ((ctrlButton)sender).Enabled = true;
             //}
 
 			if (EventAfterButtonClick != null) { EventAfterButtonClick(); }

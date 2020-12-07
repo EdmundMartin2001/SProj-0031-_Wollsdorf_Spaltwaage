@@ -1,10 +1,11 @@
-﻿namespace Wollsdorf.Spaltwaage.Controls
-{
-    using System;
-    using System.Runtime.InteropServices;
-    using System.Windows.Forms;
-    using System.Drawing;
+﻿using System;
+using System.Drawing;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
+using Wollsdorf_Spaltwaage.Allgemein.Button;
 
+namespace Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Controls
+{
     public partial class ctrlListenScroll : UserControl
     {
         [DllImport("coredll.dll")]
@@ -25,9 +26,9 @@
         {
             foreach (Control b in this.Controls)
             {
-                if (b.GetType() == typeof(Allgemein.Controls.ctrlButton))
+                if (b.GetType() == typeof(ctrlButton))
                 {
-                    ((Allgemein.Controls.ctrlButton)b).StartColor = Color.DimGray;
+                    ((ctrlButton)b).StartColor = Color.DimGray;
                 }
             }
         }

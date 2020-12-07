@@ -1,4 +1,6 @@
-﻿namespace Allgemein.Controls
+﻿using Wollsdorf_Spaltwaage.Allgemein.Button;
+
+namespace Wollsdorf_Spaltwaage.Allgemein.ButtonBar
 {
     partial class ctrlButtonBar
     {
@@ -36,14 +38,14 @@
             this.Button_Label_F7 = new System.Windows.Forms.Label();
             this.Button_Label_F8 = new System.Windows.Forms.Label();
             this.Button_Label_F1 = new System.Windows.Forms.Label();
-            this.Button8 = new Allgemein.Controls.ctrlButton();
-            this.Button7 = new Allgemein.Controls.ctrlButton();
-            this.Button6 = new Allgemein.Controls.ctrlButton();
-            this.Button5 = new Allgemein.Controls.ctrlButton();
-            this.Button4 = new Allgemein.Controls.ctrlButton();
-            this.Button3 = new Allgemein.Controls.ctrlButton();
-            this.Button2 = new Allgemein.Controls.ctrlButton();
-            this.Button1 = new Allgemein.Controls.ctrlButton();
+            this.Button8 = new ctrlButton();
+            this.Button7 = new ctrlButton();
+            this.Button6 = new ctrlButton();
+            this.Button5 = new ctrlButton();
+            this.Button4 = new ctrlButton();
+            this.Button3 = new ctrlButton();
+            this.Button2 = new ctrlButton();
+            this.Button1 = new ctrlButton();
             this.SuspendLayout();
             // 
             // Button_Label_F2
@@ -277,21 +279,21 @@
 
         #endregion
 
-        private Allgemein.Controls.ctrlButton Button1;
+        private ctrlButton Button1;
         private System.Windows.Forms.Label Button_Label_F1;
-        private Allgemein.Controls.ctrlButton Button2;
+        private ctrlButton Button2;
         private System.Windows.Forms.Label Button_Label_F2;
-        private Allgemein.Controls.ctrlButton Button3;
+        private ctrlButton Button3;
         private System.Windows.Forms.Label Button_Label_F3;
-        private Allgemein.Controls.ctrlButton Button4;
+        private ctrlButton Button4;
         private System.Windows.Forms.Label Button_Label_F4;
-        private Allgemein.Controls.ctrlButton Button5;
+        private ctrlButton Button5;
         private System.Windows.Forms.Label Button_Label_F5;
-        private Allgemein.Controls.ctrlButton Button6;
+        private ctrlButton Button6;
         private System.Windows.Forms.Label Button_Label_F6;
-        private Allgemein.Controls.ctrlButton Button7;
+        private ctrlButton Button7;
         private System.Windows.Forms.Label Button_Label_F7;
-        private Allgemein.Controls.ctrlButton Button8;
+        private ctrlButton Button8;
         private System.Windows.Forms.Label Button_Label_F8;
     }
 }

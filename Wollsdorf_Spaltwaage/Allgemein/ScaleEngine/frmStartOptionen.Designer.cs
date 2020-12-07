@@ -1,4 +1,6 @@
-﻿namespace Allgemein
+﻿using Wollsdorf_Spaltwaage.Allgemein.Button;
+
+namespace Wollsdorf_Spaltwaage.Allgemein.ScaleEngine
 {
     partial class frmStartOptionen
     {
@@ -28,12 +30,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmdLegacy = new Allgemein.Controls.ctrlButton();
-            this.cmdAsk = new Allgemein.Controls.ctrlButton();
-            this.cmdCancel = new Allgemein.Controls.ctrlButton();
-            this.cmdOK = new Allgemein.Controls.ctrlButton();
-            this.cmdReboot = new Allgemein.Controls.ctrlButton();
-            this.cmdPacOption = new Allgemein.Controls.ctrlButton();
+            this.cmdLegacy = new ctrlButton();
+            this.cmdAsk = new ctrlButton();
+            this.cmdCancel = new ctrlButton();
+            this.cmdOK = new ctrlButton();
+            this.cmdReboot = new ctrlButton();
+            this.cmdPacOption = new ctrlButton();
             this.SuspendLayout();
             // 
             // cmdLegacy
@@ -127,11 +129,11 @@
 
         #endregion
 
-        private global::Allgemein.Controls.ctrlButton cmdLegacy;
-        private global::Allgemein.Controls.ctrlButton cmdAsk;
-        private global::Allgemein.Controls.ctrlButton cmdCancel;
-        private global::Allgemein.Controls.ctrlButton cmdOK;
-        private global::Allgemein.Controls.ctrlButton cmdReboot;
-        private Allgemein.Controls.ctrlButton cmdPacOption;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdLegacy;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdAsk;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdCancel;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdOK;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdReboot;
+        private ctrlButton cmdPacOption;
     }
 }

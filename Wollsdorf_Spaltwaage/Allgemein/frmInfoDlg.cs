@@ -1,4 +1,6 @@
-﻿namespace Allgemein
+﻿using Wollsdorf_Spaltwaage.Kundenspezifisch;
+
+namespace Allgemein
 {
     using System;
     using System.Windows.Forms;

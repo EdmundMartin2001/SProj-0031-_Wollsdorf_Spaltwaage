@@ -1,4 +1,6 @@
-﻿namespace Wollsdorf
+﻿using Wollsdorf_Spaltwaage.Allgemein.ButtonBar;
+
+namespace Wollsdorf_Spaltwaage.Kundenspezifisch.Gemeinsam.Servicefunktionen
 {
     partial class frmServiceFunktionen
     {
@@ -48,7 +50,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.ctrlButtonBar1 = new Allgemein.Controls.ctrlButtonBar();
+            this.ctrlButtonBar1 = new ctrlButtonBar();
             this.cmdKill_SMT_Waage = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -298,7 +300,7 @@
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Label dispTopLabelRight;
         private System.Windows.Forms.Label dispTopLabelLeft;
-        private Allgemein.Controls.ctrlButtonBar ctrlButtonBar1;
+        private ctrlButtonBar ctrlButtonBar1;
         private System.Windows.Forms.Button cmdSQLreaderIND;
         private System.Windows.Forms.Button cmdSQLinserterIND;
         private System.Windows.Forms.TextBox tbSQLergebnisbox;

@@ -1,10 +1,11 @@
-﻿namespace Allgemein.Controls
-{
-    using System;
-    using System.Linq;
-    using System.Runtime.InteropServices;
-    using System.Windows.Forms;
+﻿using System;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
+using Wollsdorf_Spaltwaage.Allgemein.SQL;
 
+namespace Wollsdorf_Spaltwaage.Allgemein.Touch_Numeric
+{
     public partial class ctrlNumPad : UserControl
     {
         [DllImport("coredll.dll")]

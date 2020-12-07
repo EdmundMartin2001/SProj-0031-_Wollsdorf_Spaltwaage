@@ -1,4 +1,6 @@
-﻿namespace Wollsdorf.Spaltwaage.Controls
+﻿using Wollsdorf_Spaltwaage.Allgemein.Button;
+
+namespace Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Controls
 {
     partial class ctrlListenScroll
     {
@@ -29,10 +31,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlListenScroll));
-            this.cmdScrollDown = new Allgemein.Controls.ctrlButton();
-            this.cmdBildDown = new Allgemein.Controls.ctrlButton();
-            this.cmdBildUp = new Allgemein.Controls.ctrlButton();
-            this.cmdScrollUp = new Allgemein.Controls.ctrlButton();
+            this.cmdScrollDown = new ctrlButton();
+            this.cmdBildDown = new ctrlButton();
+            this.cmdBildUp = new ctrlButton();
+            this.cmdScrollUp = new ctrlButton();
             this.SuspendLayout();
             // 
             // cmdScrollDown
@@ -102,9 +104,9 @@
 
         #endregion
 
-        private Allgemein.Controls.ctrlButton cmdScrollDown;
-        private Allgemein.Controls.ctrlButton cmdBildDown;
-        private Allgemein.Controls.ctrlButton cmdBildUp;
-        private Allgemein.Controls.ctrlButton cmdScrollUp;
+        private ctrlButton cmdScrollDown;
+        private ctrlButton cmdBildDown;
+        private ctrlButton cmdBildUp;
+        private ctrlButton cmdScrollUp;
     }
 }

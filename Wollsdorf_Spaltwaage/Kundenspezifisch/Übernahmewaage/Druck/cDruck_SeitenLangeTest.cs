@@ -1,10 +1,11 @@
-﻿namespace Wollsdorf.Spaltwaage
+﻿using Wollsdorf_Spaltwaage.Allgemein.ScaleEngine;
+using Wollsdorf_Spaltwaage.Allgemein.SQL;
+
+namespace Wollsdorf.Spaltwaage
 {
     using System;
-    using System.Linq;
     using System.Collections.Generic;
     using System.Text;
-    using Allgemein;
 
     internal class cDruck_SeitenLangeTest
     {

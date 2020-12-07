@@ -1,4 +1,7 @@
-﻿namespace Wollsdorf
+﻿using Wollsdorf_Spaltwaage.Allgemein.Button;
+using Wollsdorf_Spaltwaage.Allgemein.ButtonBar;
+
+namespace Wollsdorf
 {
     partial class frmMain
     {
@@ -40,11 +43,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlLoadingMessage = new System.Windows.Forms.Panel();
             this.dispLoadMessage = new System.Windows.Forms.Label();
-            this.cmdClose = new Allgemein.Controls.ctrlButton();
-            this.cmdSetup = new Allgemein.Controls.ctrlButton();
-            this.cmdReboot = new Allgemein.Controls.ctrlButton();
-            this.cmdBaseSetup = new Allgemein.Controls.ctrlButton();
-            this.ctrlButtonBar1 = new Allgemein.Controls.ctrlButtonBar();
+            this.cmdClose = new ctrlButton();
+            this.cmdSetup = new ctrlButton();
+            this.cmdReboot = new ctrlButton();
+            this.cmdBaseSetup = new ctrlButton();
+            this.ctrlButtonBar1 = new ctrlButtonBar();
             this.pnlTop.SuspendLayout();
             this.pnlLoadingMessage.SuspendLayout();
             this.SuspendLayout();
@@ -238,18 +241,18 @@
 
         #endregion
 
-        private Allgemein.Controls.ctrlButtonBar ctrlButtonBar1;
+        private ctrlButtonBar ctrlButtonBar1;
         private System.Windows.Forms.Label dispWelcomeMessage;
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Label dispTopLabelRight;
         private System.Windows.Forms.Label dispTopLabelLeft;
         protected System.Windows.Forms.PictureBox picKundenLogo;
-        private Allgemein.Controls.ctrlButton cmdSetup;
-        private Allgemein.Controls.ctrlButton cmdClose;
-        private Allgemein.Controls.ctrlButton cmdReboot;
+        private ctrlButton cmdSetup;
+        private ctrlButton cmdClose;
+        private ctrlButton cmdReboot;
         private System.Windows.Forms.Label dispClock;
         private System.Windows.Forms.Timer timer1;
-        private Allgemein.Controls.ctrlButton cmdBaseSetup;
+        private ctrlButton cmdBaseSetup;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlLoadingMessage;

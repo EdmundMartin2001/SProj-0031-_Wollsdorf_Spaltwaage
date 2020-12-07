@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
+using Wollsdorf_Spaltwaage.Allgemein.Forms;
 
 namespace Allgemein.FormHelper
 {
@@ -18,7 +14,7 @@ namespace Allgemein.FormHelper
 
         private void frmTemplate_Load(object sender, EventArgs e)
         {
-            Allgemein.FormHelper.cFormStyle.FORM_LOAD(this, this.pnlWaage);
+            cFormStyle.FORM_LOAD(this, this.pnlWaage);
         }
     }
 }

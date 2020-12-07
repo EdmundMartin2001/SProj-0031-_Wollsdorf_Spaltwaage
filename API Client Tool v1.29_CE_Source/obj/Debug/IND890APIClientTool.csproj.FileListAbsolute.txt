@@ -1,0 +1,35 @@
+D:\IND890\CE\Source\IND890APIClientTool\bin\Debug\IND890APIClientTool.exe
+D:\IND890\CE\Source\IND890APIClientTool\bin\Debug\IND890APIClientTool.pdb
+D:\IND890\CE\Source\IND890APIClientTool\bin\Debug\IND890APIClientCE.dll
+D:\IND890\CE\Source\IND890APIClientTool\bin\Debug\OpenNETCF.WindowsCE.Messaging.dll
+D:\IND890\CE\Source\IND890APIClientTool\bin\Debug\IND890APIClientCE.pdb
+D:\IND890\CE\Source\IND890APIClientTool\obj\Debug\ResolveAssemblyReference.cache
+D:\IND890\CE\Source\IND890APIClientTool\obj\Debug\IND890APIClientTool.Properties.Resources.resources
+D:\IND890\CE\Source\IND890APIClientTool\obj\Debug\IND890APIClientTool_IPCEnabled.frmAPICalls_IPCEnabled.resources
+D:\IND890\CE\Source\IND890APIClientTool\obj\Debug\IND890APIClientTool_NonIPC.frmAPICalls_NonIPC.resources
+D:\IND890\CE\Source\IND890APIClientTool\obj\Debug\IND890APIClientTool.csproj.GenerateResource.Cache
+D:\IND890\CE\Source\IND890APIClientTool\obj\Debug\IND890APIClientTool.exe
+D:\IND890\CE\Source\IND890APIClientTool\obj\Debug\IND890APIClientTool.pdb
+D:\API Client Tool\IND890APICLIENTTOOL\bin\Debug\IND890APIClientTool.exe
+D:\API Client Tool\IND890APICLIENTTOOL\bin\Debug\IND890APIClientTool.pdb
+D:\API Client Tool\IND890APICLIENTTOOL\bin\Debug\IND890APIClientCE.dll
+D:\API Client Tool\IND890APICLIENTTOOL\bin\Debug\OpenNETCF.WindowsCE.Messaging.dll
+D:\API Client Tool\IND890APICLIENTTOOL\obj\Debug\ResolveAssemblyReference.cache
+D:\API Client Tool\IND890APICLIENTTOOL\obj\Debug\IND890APIClientTool.Properties.Resources.resources
+D:\API Client Tool\IND890APICLIENTTOOL\obj\Debug\IND890APIClientTool_IPCEnabled.frmAPICalls_IPCEnabled.resources
+D:\API Client Tool\IND890APICLIENTTOOL\obj\Debug\IND890APIClientTool_NonIPC.frmAPICalls_NonIPC.resources
+D:\API Client Tool\IND890APICLIENTTOOL\obj\Debug\IND890APIClientTool.csproj.GenerateResource.Cache
+D:\API Client Tool\IND890APICLIENTTOOL\obj\Debug\IND890APIClientTool.exe
+D:\API Client Tool\IND890APICLIENTTOOL\obj\Debug\IND890APIClientTool.pdb
+C:\Source.IND890\Wollsdorf_Spaltwaage_(SProj-0031)\API Client Tool v1.29_CE_Source\bin\Debug\IND890APIClientTool.exe
+C:\Source.IND890\Wollsdorf_Spaltwaage_(SProj-0031)\API Client Tool v1.29_CE_Source\bin\Debug\IND890APIClientTool.pdb
+C:\Source.IND890\Wollsdorf_Spaltwaage_(SProj-0031)\API Client Tool v1.29_CE_Source\bin\Debug\IND890APIClientCE.dll
+C:\Source.IND890\Wollsdorf_Spaltwaage_(SProj-0031)\API Client Tool v1.29_CE_Source\bin\Debug\System.Data.SqlClient.dll
+C:\Source.IND890\Wollsdorf_Spaltwaage_(SProj-0031)\API Client Tool v1.29_CE_Source\bin\Debug\System.Data.SqlServerCe.dll
+C:\Source.IND890\Wollsdorf_Spaltwaage_(SProj-0031)\API Client Tool v1.29_CE_Source\obj\Debug\ResolveAssemblyReference.cache
+C:\Source.IND890\Wollsdorf_Spaltwaage_(SProj-0031)\API Client Tool v1.29_CE_Source\obj\Debug\IND890APIClientTool.Properties.Resources.resources
+C:\Source.IND890\Wollsdorf_Spaltwaage_(SProj-0031)\API Client Tool v1.29_CE_Source\obj\Debug\IND890APIClientTool_NonIPC.frmAPICalls_NonIPC.resources
+C:\Source.IND890\Wollsdorf_Spaltwaage_(SProj-0031)\API Client Tool v1.29_CE_Source\obj\Debug\IND890APIClientTool_NonIPC.frmProductDetail.resources
+C:\Source.IND890\Wollsdorf_Spaltwaage_(SProj-0031)\API Client Tool v1.29_CE_Source\obj\Debug\IND890APIClientTool.csproj.GenerateResource.Cache
+C:\Source.IND890\Wollsdorf_Spaltwaage_(SProj-0031)\API Client Tool v1.29_CE_Source\obj\Debug\IND890APIClientTool.exe
+C:\Source.IND890\Wollsdorf_Spaltwaage_(SProj-0031)\API Client Tool v1.29_CE_Source\obj\Debug\IND890APIClientTool.pdb

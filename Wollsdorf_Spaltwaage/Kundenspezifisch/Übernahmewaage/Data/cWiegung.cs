@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Wollsdorf_Spaltwaage.Kundenspezifisch.Gemeinsam.Settings;
 
-namespace Wollsdorf.Spaltwaage
+namespace Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Data
 {
     internal class cWiegung
     {
-        public Wollsdorf.Data.cData_Settings objSettings;
+        public cData_Settings objSettings;
         public long lBestellnummer { get; set; }
         public int iLieferantennummer { get; set; }
         
         public cWiegung()
         {
-            this.objSettings = new Wollsdorf.Data.cData_Settings();
+            this.objSettings = new cData_Settings();
         }
     }
 }

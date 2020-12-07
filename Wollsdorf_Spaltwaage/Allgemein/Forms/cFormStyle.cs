@@ -1,11 +1,7 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Drawing;
 using System.Windows.Forms;
-using System.Drawing;
 
-namespace Allgemein.FormHelper
+namespace Wollsdorf_Spaltwaage.Allgemein.Forms
 {
     internal class cFormStyle
     {

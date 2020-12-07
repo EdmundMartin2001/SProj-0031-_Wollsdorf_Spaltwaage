@@ -1,4 +1,6 @@
-﻿namespace Wollsdorf
+﻿using Wollsdorf_Spaltwaage.Allgemein.ButtonBar;
+
+namespace Wollsdorf_Spaltwaage.Kundenspezifisch.Gemeinsam.Setup
 {
     partial class frmSetup
     {
@@ -115,7 +117,7 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.ctrlButtonBar1 = new Allgemein.Controls.ctrlButtonBar();
+            this.ctrlButtonBar1 = new ctrlButtonBar();
             this.pnlTop.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1038,7 +1040,7 @@
 
         #endregion
 
-        private Allgemein.Controls.ctrlButtonBar ctrlButtonBar1;
+        private ctrlButtonBar ctrlButtonBar1;
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Label dispTopLabelRight;
         private System.Windows.Forms.Label dispTopLabelLeft;

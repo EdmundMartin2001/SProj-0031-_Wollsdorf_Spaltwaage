@@ -1,4 +1,6 @@
-﻿namespace Allgemein.Controls
+﻿using Wollsdorf_Spaltwaage.Allgemein.Button;
+
+namespace Wollsdorf_Spaltwaage.Allgemein.Touch_Numeric
 {
     partial class ctrlNumPad
     {
@@ -28,18 +30,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmdKeyReset = new Allgemein.Controls.ctrlButton();
-            this.cmdKeyBs = new Allgemein.Controls.ctrlButton();
-            this.cmdKey0 = new Allgemein.Controls.ctrlButton();
-            this.cmdKey3 = new Allgemein.Controls.ctrlButton();
-            this.cmdKey2 = new Allgemein.Controls.ctrlButton();
-            this.cmdKey1 = new Allgemein.Controls.ctrlButton();
-            this.cmdKey6 = new Allgemein.Controls.ctrlButton();
-            this.cmdKey5 = new Allgemein.Controls.ctrlButton();
-            this.cmdKey4 = new Allgemein.Controls.ctrlButton();
-            this.cmdKey9 = new Allgemein.Controls.ctrlButton();
-            this.cmdKey8 = new Allgemein.Controls.ctrlButton();
-            this.cmdKey7 = new Allgemein.Controls.ctrlButton();
+            this.cmdKeyReset = new ctrlButton();
+            this.cmdKeyBs = new ctrlButton();
+            this.cmdKey0 = new ctrlButton();
+            this.cmdKey3 = new ctrlButton();
+            this.cmdKey2 = new ctrlButton();
+            this.cmdKey1 = new ctrlButton();
+            this.cmdKey6 = new ctrlButton();
+            this.cmdKey5 = new ctrlButton();
+            this.cmdKey4 = new ctrlButton();
+            this.cmdKey9 = new ctrlButton();
+            this.cmdKey8 = new ctrlButton();
+            this.cmdKey7 = new ctrlButton();
             this.SuspendLayout();
             // 
             // cmdKeyReset

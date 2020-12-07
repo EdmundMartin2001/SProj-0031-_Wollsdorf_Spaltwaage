@@ -1,20 +1,22 @@
-﻿namespace Wollsdorf
-{
-    using System;
-    using System.Data;
-    using System.Data.SqlServerCe;
-    using System.Drawing;
-    using System.Windows.Forms;
-    using Allgemein;
-    using System.Collections.Generic;
-    using Wollsdorf.Spaltwaage;
-    using SMT_SQL_2V.DB.Private;
+﻿using System;
+using System.Data;
+using System.Data.SqlServerCe;
+using System.Drawing;
+using System.Windows.Forms;
+using Wollsdorf.Spaltwaage;
+using Wollsdorf_Spaltwaage.Allgemein.ButtonBar;
+using Wollsdorf_Spaltwaage.Allgemein.Forms;
+using Wollsdorf_Spaltwaage.Allgemein.SQL;
+using Wollsdorf_Spaltwaage.Kundenspezifisch.Gemeinsam.Settings;
+using Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Data;
 
+namespace Wollsdorf_Spaltwaage.Kundenspezifisch.Gemeinsam.Servicefunktionen
+{
     internal partial class frmServiceFunktionen : Form
     {
-        private Wollsdorf.Spaltwaage.cWiegung objWiegung;
+        private cWiegung objWiegung;
 
-        public frmServiceFunktionen(ref Wollsdorf.Spaltwaage.cWiegung Wiegung)
+        public frmServiceFunktionen(ref cWiegung Wiegung)
         {
             InitializeComponent();
             this.objWiegung = Wiegung;
@@ -22,7 +24,7 @@
 
         private void frmServiceFunktionen_Load(object sender, EventArgs e)
         {
-            Allgemein.FormHelper.cFormStyle.FORM_LOAD(this, null);
+            cFormStyle.FORM_LOAD(this, null);
             this.dispTopLabelLeft.Text = this.objWiegung.objSettings.get_ArbeitsplatzName;
             this.Init_ButtonBar();
         }
@@ -44,7 +46,7 @@
             myIcon = Wollsdorf_Spaltwaage.Properties.Resources.ico_Ok;
             ctrlButtonBar1.Button_F4.Bild_Icon = myIcon;
 
-            ctrlButtonBar1.EventButtonClick += new Allgemein.Controls.ctrlButtonBar._EventButtonClick(ctrlButtonBar1_EventButtonClick);
+            ctrlButtonBar1.EventButtonClick += new ctrlButtonBar._EventButtonClick(ctrlButtonBar1_EventButtonClick);
 
         }
         private void ctrlButtonBar1_EventButtonClick(object sender, string fTaste, int iTastenCode, string fTag)
@@ -71,7 +73,7 @@
         private void cmdSQLreader_Click(object sender, EventArgs e)
         {
 
-            System.Data.SqlClient.SqlConnection myConnection = new System.Data.SqlClient.SqlConnection(SMT_SQL_2V.DB.cDB_Settings.ConnectionString_EXTERN);
+            System.Data.SqlClient.SqlConnection myConnection = new System.Data.SqlClient.SqlConnection(cDB_Settings.ConnectionString_EXTERN);
             try
             {
                 myConnection.Open();
@@ -110,7 +112,7 @@
         private void cmdSQLinserter_Click(object sender, EventArgs e)
         {
             System.Data.SqlClient.SqlConnection myConnection = new 
-            System.Data.SqlClient.SqlConnection(SMT_SQL_2V.DB.cDB_Settings.ConnectionString_EXTERN);
+            System.Data.SqlClient.SqlConnection(cDB_Settings.ConnectionString_EXTERN);
 
             try
             {
@@ -156,7 +158,7 @@
 
         private void cmdSQLreaderIND_Click(object sender, EventArgs e)
         {
-            string sConn = string.Format("DataSource={0}", SMT_SQL_2V.DB.cDB_Settings.CE_ConnectionString);
+            string sConn = string.Format("DataSource={0}", cDB_Settings.CE_ConnectionString);
 
             System.Data.SqlServerCe.SqlCeConnection myConnection =
                 new System.Data.SqlServerCe.SqlCeConnection(sConn);
@@ -196,7 +198,7 @@
 
         private void cmdSQLinserterIND_Click(object sender, EventArgs e)
         {
-            string sConn = string.Format("DataSource={0}", SMT_SQL_2V.DB.cDB_Settings.CE_ConnectionString);
+            string sConn = string.Format("DataSource={0}", cDB_Settings.CE_ConnectionString);
 
             System.Data.SqlServerCe.SqlCeConnection myConnection = new
                 System.Data.SqlServerCe.SqlCeConnection(sConn);
@@ -209,8 +211,8 @@
 
 
                     SqlCeCommand myCommand = new SqlCeCommand("INSERT INTO SMT_TEST (Test_Datum,Test_Text, Test_Nummer) " +
-                                     "Values (" + SMT_SQL_2V.DB.Private.cDB_SQL_CE.DATE_TIME_TO_DB(DateTime.Now) + ",'" + addTimestamp("Test") + "'," + addTimestamp("123.45") + ")", myConnection);
-                    tbSQLergebnisbox.Text = SMT_SQL_2V.DB.Private.cDB_SQL_CE.DATE_TIME_TO_DB(DateTime.Now) + "," + addTimestamp("Test") + "," + addTimestamp("123.45");
+                                     "Values (" + cDB_SQL_CE.DATE_TIME_TO_DB(DateTime.Now) + ",'" + addTimestamp("Test") + "'," + addTimestamp("123.45") + ")", myConnection);
+                    tbSQLergebnisbox.Text = cDB_SQL_CE.DATE_TIME_TO_DB(DateTime.Now) + "," + addTimestamp("Test") + "," + addTimestamp("123.45");
                     myCommand.ExecuteNonQuery();
                 }
                 catch (Exception ex)
@@ -389,13 +391,13 @@
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int i = Allgemein.cGlobalNummerkreis.Nummernkreis1_GetCurrent();
+            int i = global::Allgemein.cGlobalNummerkreis.Nummernkreis1_GetCurrent();
 
-            i = Allgemein.cGlobalNummerkreis.Nummernkreis1_GetNext();
+            i = global::Allgemein.cGlobalNummerkreis.Nummernkreis1_GetNext();
 
-            Allgemein.cGlobalNummerkreis.Nummernkreis1_SetNext();
+            global::Allgemein.cGlobalNummerkreis.Nummernkreis1_SetNext();
 
-            i = Allgemein.cGlobalNummerkreis.Nummernkreis1_GetCurrent();
+            i = global::Allgemein.cGlobalNummerkreis.Nummernkreis1_GetCurrent();
         }
 
         private void cmdKill_SMT_Waage_Click(object sender, EventArgs e)
@@ -408,7 +410,7 @@
 
                     try
                     {
-                        qry = new SMT_SQL_2V.DB.Private.cDB_SQL_CE(SMT_SQL_2V.DB.cDB_Settings.CE_ConnectionString);
+                        qry = new cDB_SQL_CE(cDB_Settings.CE_ConnectionString);
                         qry.Exec(sSQL);
                     }
                     catch (Exception ex)

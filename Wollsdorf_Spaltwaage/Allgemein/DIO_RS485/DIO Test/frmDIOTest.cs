@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Wollsdorf_Spaltwaage.Kundenspezifisch;
 
-namespace Allgemein
+namespace Wollsdorf_Spaltwaage.Allgemein.DIO_RS485
 {
     internal partial class frmDIOTest : Form
     {
-        private Allgemein.DIO.cSMT_DIO objDIO;
+        private global::Wollsdorf_Spaltwaage.Allgemein.DIO_RS485.cSMT_DIO objDIO;
         private bool bStackCheck;
 
         public frmDIOTest()
@@ -14,28 +15,49 @@ namespace Allgemein
             InitializeComponent();
 
             this.bStackCheck = false;
-            this.objDIO = new Allgemein.DIO.cSMT_DIO();
-
-            if (this.objDIO != null)
-            {
-                this.objDIO.DIO_ResetAll();
-                this.objDIO.Set_OUT_Bit(/*Bit*/ 1, true);
-            }
-            else
-            {
-                MessageBox.Show("KEINE DIGITAL IO", "Hardware Fehler bei IO");
-            }
-
+            this.timer1.Enabled = false;
         }
+        private bool Erzeuge_Objekt()
+        {
+            bool bRet = false;
 
+            try
+            {
+                this.objDIO = new global::Wollsdorf_Spaltwaage.Allgemein.DIO_RS485.cSMT_DIO();
+
+                if (this.objDIO != null)
+                {
+                    this.objDIO.DIO_ResetAll();
+                    
+                    this.objDIO.Set_OUT_Bit(/*Bit*/ 1, true);
+                    bRet = true;
+                }
+                else
+                {
+                    MessageBox.Show("KEINE DIGITAL IO", "Hardware Fehler bei IO");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Phase1");
+            }
+
+            return bRet;
+        }
         private void frmDIOTest_Load(object sender, EventArgs e)
         {
             cGlobalHandling.CenterForm(this, 80);
 
-            this.timer1.Interval = 500;
-            this.timer1.Enabled = true;
+            if (!this.Erzeuge_Objekt())
+            {
+                this.Close();
+            }
+            else
+            {
+                this.timer1.Interval = 5000;
+                this.timer1.Enabled = true;
+            }
         }
-
         private void cmdIO1_Click(object sender, EventArgs e)
         {
             this.Set_Button(/*Bit*/ 1, this.cmdIO1);
@@ -84,7 +106,6 @@ namespace Allgemein
         {
             this.Set_Button(/*Bit*/ 12, this.cmdIO12);
         }
-
         private void Set_Button(int iBit, System.Windows.Forms.Button c)
         {
             bool bInvert = this.objDIO.Get_OUT_Bit(/*Bit*/ iBit);
@@ -99,6 +120,8 @@ namespace Allgemein
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
+            this.Text = DateTime.Now.ToLongTimeString();
+
             if (this.bStackCheck)
             {
                 return;
@@ -131,7 +154,7 @@ namespace Allgemein
                 this.bStackCheck = false;
             }
         }
-        private void Get_InputState(int iBit, Allgemein.Controls.ctrlButton c)
+        private void Get_InputState(int iBit, global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton c)
         {
             bool b = this.objDIO.Get_IN_Bit(/*Bit*/ iBit);
             

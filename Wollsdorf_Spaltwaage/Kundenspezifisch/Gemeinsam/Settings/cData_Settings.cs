@@ -1,10 +1,8 @@
-﻿namespace Wollsdorf.Data
-{
-    using System;
-    using System.Linq;
-    using System.Collections.Generic;
-    using System.Text;
+﻿using System;
+using Wollsdorf_Spaltwaage.Allgemein.SQL;
 
+namespace Wollsdorf_Spaltwaage.Kundenspezifisch.Gemeinsam.Settings
+{
     internal class cData_Settings
     {
         public enum eArbeitsplatztyp
@@ -91,7 +89,7 @@
                 }
                 catch (Exception ex)
                 {
-                    Allgemein.SiAuto.LogException(ex);
+                    SiAuto.LogException(ex);
                 }
             }
         }

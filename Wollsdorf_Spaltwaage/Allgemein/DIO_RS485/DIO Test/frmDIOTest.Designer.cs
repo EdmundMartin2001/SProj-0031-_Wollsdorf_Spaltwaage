@@ -1,4 +1,5 @@
-﻿namespace Allgemein
+﻿using Wollsdorf_Spaltwaage.Allgemein.Button;
+namespace Wollsdorf_Spaltwaage.Allgemein.DIO_RS485
 {
     partial class frmDIOTest
     {
@@ -29,28 +30,28 @@
         private void InitializeComponent()
         {
             this.timer1 = new System.Windows.Forms.Timer();
-            this.cmdIOInp8 = new Allgemein.Controls.ctrlButton();
-            this.cmdIOInp7 = new Allgemein.Controls.ctrlButton();
-            this.cmdIOInp4 = new Allgemein.Controls.ctrlButton();
-            this.cmdIOInp3 = new Allgemein.Controls.ctrlButton();
-            this.cmdIOInp6 = new Allgemein.Controls.ctrlButton();
-            this.cmdIOInp5 = new Allgemein.Controls.ctrlButton();
-            this.cmdIOInp2 = new Allgemein.Controls.ctrlButton();
-            this.cmdIOInp1 = new Allgemein.Controls.ctrlButton();
-            this.cmdIO11 = new Allgemein.Controls.ctrlButton();
-            this.cmdIO10 = new Allgemein.Controls.ctrlButton();
-            this.cmdIO12 = new Allgemein.Controls.ctrlButton();
-            this.cmdIO9 = new Allgemein.Controls.ctrlButton();
-            this.cmdIO8 = new Allgemein.Controls.ctrlButton();
-            this.cmdIO7 = new Allgemein.Controls.ctrlButton();
-            this.cmdIO4 = new Allgemein.Controls.ctrlButton();
-            this.cmdIO3 = new Allgemein.Controls.ctrlButton();
-            this.cmdIO6 = new Allgemein.Controls.ctrlButton();
-            this.cmdIO5 = new Allgemein.Controls.ctrlButton();
-            this.cmdIOReset = new Allgemein.Controls.ctrlButton();
-            this.cmdIO2 = new Allgemein.Controls.ctrlButton();
-            this.cmdIO1 = new Allgemein.Controls.ctrlButton();
-            this.cmdExit = new Allgemein.Controls.ctrlButton();
+            this.cmdIOInp8 = new ctrlButton();
+            this.cmdIOInp7 = new ctrlButton();
+            this.cmdIOInp4 = new ctrlButton();
+            this.cmdIOInp3 = new ctrlButton();
+            this.cmdIOInp6 = new ctrlButton();
+            this.cmdIOInp5 = new ctrlButton();
+            this.cmdIOInp2 = new ctrlButton();
+            this.cmdIOInp1 = new ctrlButton();
+            this.cmdIO11 = new ctrlButton();
+            this.cmdIO10 = new ctrlButton();
+            this.cmdIO12 = new ctrlButton();
+            this.cmdIO9 = new ctrlButton();
+            this.cmdIO8 = new ctrlButton();
+            this.cmdIO7 = new ctrlButton();
+            this.cmdIO4 = new ctrlButton();
+            this.cmdIO3 = new ctrlButton();
+            this.cmdIO6 = new ctrlButton();
+            this.cmdIO5 = new ctrlButton();
+            this.cmdIOReset = new ctrlButton();
+            this.cmdIO2 = new ctrlButton();
+            this.cmdIO1 = new ctrlButton();
+            this.cmdExit = new ctrlButton();
             this.SuspendLayout();
             // 
             // timer1
@@ -150,7 +151,7 @@
             // 
             this.cmdIO11.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.cmdIO11.ForeColor = System.Drawing.Color.White;
-            this.cmdIO11.Location = new System.Drawing.Point(611, 86);
+            this.cmdIO11.Location = new System.Drawing.Point(611, 89);
             this.cmdIO11.Name = "cmdIO11";
             this.cmdIO11.Size = new System.Drawing.Size(113, 57);
             this.cmdIO11.TabIndex = 13;
@@ -161,7 +162,7 @@
             // 
             this.cmdIO10.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.cmdIO10.ForeColor = System.Drawing.Color.White;
-            this.cmdIO10.Location = new System.Drawing.Point(499, 86);
+            this.cmdIO10.Location = new System.Drawing.Point(499, 89);
             this.cmdIO10.Name = "cmdIO10";
             this.cmdIO10.Size = new System.Drawing.Size(113, 57);
             this.cmdIO10.TabIndex = 12;
@@ -172,7 +173,7 @@
             // 
             this.cmdIO12.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.cmdIO12.ForeColor = System.Drawing.Color.White;
-            this.cmdIO12.Location = new System.Drawing.Point(724, 86);
+            this.cmdIO12.Location = new System.Drawing.Point(724, 89);
             this.cmdIO12.Name = "cmdIO12";
             this.cmdIO12.Size = new System.Drawing.Size(113, 57);
             this.cmdIO12.TabIndex = 10;
@@ -183,7 +184,7 @@
             // 
             this.cmdIO9.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.cmdIO9.ForeColor = System.Drawing.Color.White;
-            this.cmdIO9.Location = new System.Drawing.Point(386, 86);
+            this.cmdIO9.Location = new System.Drawing.Point(386, 89);
             this.cmdIO9.Name = "cmdIO9";
             this.cmdIO9.Size = new System.Drawing.Size(113, 57);
             this.cmdIO9.TabIndex = 9;
@@ -194,7 +195,7 @@
             // 
             this.cmdIO8.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.cmdIO8.ForeColor = System.Drawing.Color.White;
-            this.cmdIO8.Location = new System.Drawing.Point(274, 86);
+            this.cmdIO8.Location = new System.Drawing.Point(274, 89);
             this.cmdIO8.Name = "cmdIO8";
             this.cmdIO8.Size = new System.Drawing.Size(113, 57);
             this.cmdIO8.TabIndex = 8;
@@ -205,7 +206,7 @@
             // 
             this.cmdIO7.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.cmdIO7.ForeColor = System.Drawing.Color.White;
-            this.cmdIO7.Location = new System.Drawing.Point(161, 86);
+            this.cmdIO7.Location = new System.Drawing.Point(161, 89);
             this.cmdIO7.Name = "cmdIO7";
             this.cmdIO7.Size = new System.Drawing.Size(113, 57);
             this.cmdIO7.TabIndex = 7;
@@ -340,28 +341,28 @@
 
         #endregion
 
-        private Allgemein.Controls.ctrlButton cmdIO11;
-        private Allgemein.Controls.ctrlButton cmdIO10;
-        private Allgemein.Controls.ctrlButton cmdIO12;
-        private Allgemein.Controls.ctrlButton cmdIO9;
-        private Allgemein.Controls.ctrlButton cmdIO8;
-        private Allgemein.Controls.ctrlButton cmdIO7;
-        private Allgemein.Controls.ctrlButton cmdIO4;
-        private Allgemein.Controls.ctrlButton cmdIO3;
-        private Allgemein.Controls.ctrlButton cmdIO6;
-        private Allgemein.Controls.ctrlButton cmdIO5;
-        private Allgemein.Controls.ctrlButton cmdIOReset;
-        private Allgemein.Controls.ctrlButton cmdIO2;
-        private Allgemein.Controls.ctrlButton cmdIO1;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdIO11;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdIO10;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdIO12;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdIO9;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdIO8;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdIO7;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdIO4;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdIO3;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdIO6;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdIO5;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdIOReset;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdIO2;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdIO1;
         private System.Windows.Forms.Timer timer1;
-        private Allgemein.Controls.ctrlButton cmdIOInp8;
-        private Allgemein.Controls.ctrlButton cmdIOInp7;
-        private Allgemein.Controls.ctrlButton cmdIOInp4;
-        private Allgemein.Controls.ctrlButton cmdIOInp3;
-        private Allgemein.Controls.ctrlButton cmdIOInp6;
-        private Allgemein.Controls.ctrlButton cmdIOInp5;
-        private Allgemein.Controls.ctrlButton cmdIOInp2;
-        private Allgemein.Controls.ctrlButton cmdIOInp1;
-        private Allgemein.Controls.ctrlButton cmdExit;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdIOInp8;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdIOInp7;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdIOInp4;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdIOInp3;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdIOInp6;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdIOInp5;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdIOInp2;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdIOInp1;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdExit;
     }
 }

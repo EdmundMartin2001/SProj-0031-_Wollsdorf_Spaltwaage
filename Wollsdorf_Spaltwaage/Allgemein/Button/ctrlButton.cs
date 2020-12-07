@@ -1,13 +1,10 @@
-﻿namespace Allgemein.Controls
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace Wollsdorf_Spaltwaage.Allgemein.Button
 {
-    using System;
-    using System.Drawing;
-    using System.IO;
-    using System.ComponentModel;
-    using System.Runtime.CompilerServices;
-    using System.Windows.Forms;
-    
-    internal class ctrlButton : Button
+    internal class ctrlButton : System.Windows.Forms.Button
     {
         private Bitmap bmDoubleBuffer;
         private Icon BildIcon;

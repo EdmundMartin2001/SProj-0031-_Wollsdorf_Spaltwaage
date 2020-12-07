@@ -1,4 +1,4 @@
-﻿namespace Allgemein
+﻿namespace Wollsdorf_Spaltwaage.Allgemein
 {
     partial class frmYesNoSicher
     {

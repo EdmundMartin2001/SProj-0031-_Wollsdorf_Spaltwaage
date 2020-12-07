@@ -1,10 +1,9 @@
-﻿namespace Allgemein.Controls
-{
-    using System;
-    using System.Drawing;
-    using System.Runtime.CompilerServices;
-    using System.Runtime.InteropServices;
+﻿using System;
+using System.Drawing;
+using System.Runtime.InteropServices;
 
+namespace Wollsdorf_Spaltwaage.Allgemein.Button
+{
     public sealed class Win32
     {
         public const uint BM_SETSTATE = 0xf3;

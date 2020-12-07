@@ -1,28 +1,16 @@
-﻿namespace Allgemein
-{
-    using System;
-    using System.Linq;
-    using System.Collections.Generic;
-    using System.Text;
-    using MTTS.IND890.CE;
-    using System.Diagnostics;
-    using System.Windows.Forms;
+﻿using System;
+using System.Diagnostics;
+using System.Windows.Forms;
 
+namespace Wollsdorf_Spaltwaage.Allgemein.ScaleEngine
+{
     internal class cScale
     {
-        private CIND890APIScaleClient objIND890APIScaleClient;
-        private CIND890APITerminalClient objIND890APITerminalClient;
-
         private bool bISConnection;
 
         public cScale()
         {
             this.bISConnection = false;
-          //  this.objIND890APIClient = null;
-            this.objIND890APIScaleClient = null;
-            this.objIND890APITerminalClient = null;
-        
-        
         }
 
         ~cScale()
@@ -43,23 +31,35 @@
         {
             try
             {
+                if (cGlobalScale.objRS232_X5 != null)
+                {                    
+                    cGlobalScale.objRS232_X5 = null;
+                }
+
                 if (cGlobalScale.objCIND890APIClient != null)
                 {
                     cGlobalScale.objCIND890APIClient.DisconnectFromAPIServer();
                     cGlobalScale.objCIND890APIClient = null;
                 }
 
-                if (this.objIND890APIScaleClient != null)
+                if (cGlobalScale.objCIND890APIClient_DigitalIO != null)
                 {
-                    this.objIND890APIScaleClient.DisconnectFromAPIServer();
-                    this.objIND890APIScaleClient = null;
+                    cGlobalScale.objCIND890APIClient_DigitalIO.DisconnectFromAPIServer();
+                    cGlobalScale.objCIND890APIClient_DigitalIO = null;
                 }
 
-                if (this.objIND890APITerminalClient != null)
+                if (cGlobalScale.objCIND890APITerminalClient != null)
                 {
-                    this.objIND890APITerminalClient.DisconnectFromAPIServer();
-                    this.objIND890APITerminalClient = null;
+                    cGlobalScale.objCIND890APITerminalClient.DisconnectFromAPIServer();
+                    cGlobalScale.objCIND890APITerminalClient = null;
                 }
+                if (cGlobalScale.m_APIWeighingClient != null)
+                {
+                    cGlobalScale.m_APIWeighingClient.DisconnectFromAPIServer();
+                    cGlobalScale.m_APIWeighingClient = null;
+                }
+
+                
             }
             catch (Exception ex)
             {
@@ -71,24 +71,66 @@
         public bool Start()
         {
             bool bRet = false;
+            const string apiPassword = "API";
 
             try
             {
-                bRet = cGlobalScale.STARTE_CLIENT();
-                if (!bRet)
+                // Erstelle neue Client Objekte
+                cGlobalScale.create_client_objects();
+
+                this.bISConnection = cGlobalScale.objCIND890APIClient.ConnectToAPIServer(apiPassword);
+
+                if (this.bISConnection)
                 {
-                    MessageBox.Show("Keine Verbindung zu Terminal Client");
+                    bool bStatus = cGlobalScale.objCIND890APIClient.RunSecondClient(true);
+
+                    if (!bStatus)
+                    {
+                        MessageBox.Show("Connection to IND890 API Server failed.", "Phase#1.IND890APIClient.RunSecondClient");
+                        return false;
+                    }
+                    else
+                    {
+                        this.bISConnection = cGlobalScale.objCIND890APITerminalClient.ConnectToAPIServer("API");
+
+                        if (!this.bISConnection)
+                        {
+                            MessageBox.Show("Connection to IND890 API Server failed.", "Phase#3.IND890APIClient.CIND890APITerminalClient");
+                            return false;
+                        }
+                        else
+                        {
+                            bStatus = cGlobalScale.objCIND890APIClient.RunThirdClient(true);
+
+                            if (!bStatus)
+                            {
+                                MessageBox.Show("Connection to IND890 API Server failed.", "Phase#4.IND890APIClient.RunThirdClient");
+                                return false;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Connection to IND890 API Server2 failed.", "Phase#1.IND890APIClient.RunSecondClient");
                     return false;
                 }
 
-                this.objIND890APIScaleClient = new CIND890APIScaleClient();
-                this.objIND890APITerminalClient = new CIND890APITerminalClient();
-                
-                string apiPassword = "API";
-                //To enable IPC Communication , available only for WinCE
-                this.bISConnection = cGlobalScale.objCIND890APIClient.ConnectToAPIServer(apiPassword);
+
                 if (this.bISConnection)
                 {
+                    bool bIS4IO_Connection = cGlobalScale.objCIND890APIClient_DigitalIO.ConnectToAPIServer(apiPassword);
+
+                    if (!bIS4IO_Connection)
+                    {
+                        MessageBox.Show("Achtung!\r\n\r\nKeine Verbindung zur ARM100", "Phase#5.IND890APIClient.CIND890APIClient_DigitalIO");
+                    }
+                    else
+                    {
+                        //MessageBox.Show("Die Verbindung zur ARM100\r\nwurde erfolgreich aufgebaut", "Digital IO");
+                    }
+
+                    
                     cGlobalScale.objCIND890APIClient.Terminal.Top = 19;
                     cGlobalScale.objCIND890APIClient.Terminal.Left = 669;
 

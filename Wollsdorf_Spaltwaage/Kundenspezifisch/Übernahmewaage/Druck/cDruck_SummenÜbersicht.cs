@@ -1,8 +1,11 @@
-﻿namespace Wollsdorf.Spaltwaage
+﻿using Wollsdorf_Spaltwaage.Allgemein.ScaleEngine;
+using Wollsdorf_Spaltwaage.Allgemein.SQL;
+using Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Data;
+
+namespace Wollsdorf.Spaltwaage
 {
     using System;
     using System.Collections.Generic;
-    using Allgemein;
     using System.Text;
 
     internal class cDruck_Summenliste
@@ -530,7 +533,7 @@
                     if(this.SendTORS232(sSendTxt))
                     {
                         //Seitenwechsel
-                        cGlobalScale.objRS232_X5.SendString(new string (this.cEpson_FormFeed));
+                        cGlobalScale.objRS232_X5.SendString(new string(this.cEpson_FormFeed));
                                                 
                         this.SendTORS232("************************* Neue Seite *************************\x0d\x0a");
                         this.SendTORS232("Dies sollte der Begin einer neuen Seite sein. Ist das nicht der Fall, dann wurde\x0d\x0a");

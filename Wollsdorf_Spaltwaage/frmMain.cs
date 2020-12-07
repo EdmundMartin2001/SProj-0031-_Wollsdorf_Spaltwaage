@@ -1,22 +1,33 @@
-﻿namespace Wollsdorf
+﻿using Wollsdorf_Spaltwaage.Allgemein.ButtonBar;
+using Wollsdorf_Spaltwaage.Allgemein.DIO_RS485;
+using Wollsdorf_Spaltwaage.Allgemein.Forms;
+using Wollsdorf_Spaltwaage.Allgemein.ScaleEngine;
+using Wollsdorf_Spaltwaage.Allgemein.SQL;
+using Wollsdorf_Spaltwaage.Kundenspezifisch;
+using Wollsdorf_Spaltwaage.Kundenspezifisch.Gemeinsam.Servicefunktionen;
+using Wollsdorf_Spaltwaage.Kundenspezifisch.Gemeinsam.Settings;
+using Wollsdorf_Spaltwaage.Kundenspezifisch.Gemeinsam.Setup;
+using Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Data;
+using Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Fenster.SAP_Parameter;
+
+namespace Wollsdorf
 {
     using System;
     using System.Diagnostics;
     using System.Drawing;
     using System.Windows.Forms;
-    using Allgemein;
-    using Wollsdorf.Spaltwaage;
 
     public partial class frmMain : Form
     {
-        private Wollsdorf.Spaltwaage.cWiegung objWiegung;
+        private cWiegung objWiegung;
+        private cSMT_DIO objDIO;
         
         public frmMain()
         {
             InitializeComponent();
 
-            this.objWiegung = new Wollsdorf.Spaltwaage.cWiegung();
-            this.objWiegung.objSettings = new Wollsdorf.Data.cData_Settings();
+            this.objWiegung = new cWiegung();
+            this.objWiegung.objSettings = new cData_Settings();
         
             this.pnlLoadingMessage.Visible = false;
             this.dispLoadMessage.Visible = false;
@@ -26,7 +37,7 @@
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            Allgemein.FormHelper.cFormStyle.FORM_LOAD(this, null);
+            cFormStyle.FORM_LOAD(this, null);
 
             cData_Settings_Handling.Load_Settings(this.objWiegung.objSettings);
 
@@ -37,7 +48,7 @@
             
             this.Init_ButtonBar();
 
-            ctrlButtonBar1.EventButtonClick += new Allgemein.Controls.ctrlButtonBar._EventButtonClick(ctrlButtonBar1_EventButtonClick);
+            ctrlButtonBar1.EventButtonClick += new ctrlButtonBar._EventButtonClick(ctrlButtonBar1_EventButtonClick);
 
             try
             {
@@ -310,11 +321,41 @@
         }    
         private void picKundenLogo_Click(object sender, EventArgs e)
         {
-            if (SETTINGS.IS_EntwicklungsPC())
+            //if (SETTINGS.IS_EntwicklungsPC())
+            //{
+            //    this.Close();
+            //}
+
+            this.Erzeuge_Objekt();
+        }
+
+        private bool Erzeuge_Objekt()
+        {
+            bool bRet = false;
+
+            try
             {
-                this.Close();
+                this.objDIO = new cSMT_DIO();
+
+                if (this.objDIO != null)
+                {
+                    this.objDIO.DIO_ResetAll();
+
+                    this.objDIO.Set_OUT_Bit(/*Bit*/ 1, true);
+                    bRet = true;
+                }
+                else
+                {
+                    MessageBox.Show("KEINE DIGITAL IO", "Hardware Fehler bei IO");
+                }
             }
-        }    
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Phase1");
+            }
+
+            return bRet;
+        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {

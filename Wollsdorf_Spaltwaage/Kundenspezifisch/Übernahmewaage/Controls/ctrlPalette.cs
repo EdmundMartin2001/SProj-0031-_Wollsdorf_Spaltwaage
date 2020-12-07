@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using Allgemein;
 using Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Data;
 
-namespace Wollsdorf.Spaltwaage.Controls
+namespace Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Controls
 {
     internal partial class ctrlPalette : UserControl
     {

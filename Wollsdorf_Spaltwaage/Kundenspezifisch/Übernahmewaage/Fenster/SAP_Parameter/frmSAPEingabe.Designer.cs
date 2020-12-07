@@ -1,4 +1,7 @@
-﻿namespace Wollsdorf.Spaltwaage
+﻿using Wollsdorf_Spaltwaage.Allgemein.ButtonBar;
+using Wollsdorf_Spaltwaage.Allgemein.Touch_Numeric;
+
+namespace Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Fenster.SAP_Parameter
 {
     partial class frmSAPEingabe
     {
@@ -40,8 +43,8 @@
             this.dispErrorText = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmdsimu = new System.Windows.Forms.Button();
-            this.ctrlDoubleNumPad1 = new Allgemein.Controls.ctrlDoubleNumPad();
-            this.ctrlButtonBar1 = new Allgemein.Controls.ctrlButtonBar();
+            this.ctrlDoubleNumPad1 = new ctrlDoubleNumPad();
+            this.ctrlButtonBar1 = new ctrlButtonBar();
             this.pnlTop.SuspendLayout();
             this.pnlLoadingMessage.SuspendLayout();
             this.SuspendLayout();
@@ -207,11 +210,11 @@
         private System.Windows.Forms.Label dispTopLabelLeft;
         private System.Windows.Forms.Label dispTopLabelRight;
         private System.Windows.Forms.Panel pnlTop;
-        private Allgemein.Controls.ctrlButtonBar ctrlButtonBar1;
+        private ctrlButtonBar ctrlButtonBar1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbLieferantennummer;
         private System.Windows.Forms.TextBox tbBestellnummer;
-        private Allgemein.Controls.ctrlDoubleNumPad ctrlDoubleNumPad1;
+        private ctrlDoubleNumPad ctrlDoubleNumPad1;
         private System.Windows.Forms.Panel pnlLoadingMessage;
         private System.Windows.Forms.Label dispLoadMessage;
         private System.Windows.Forms.Label dispErrorText;

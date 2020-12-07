@@ -1,4 +1,7 @@
-﻿namespace Wollsdorf.Spaltwaage
+﻿using Wollsdorf_Spaltwaage.Allgemein.ButtonBar;
+using Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Controls;
+
+namespace Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Fenster.Palettenauswahl
 {
     partial class frmPalettenauswahl
     {
@@ -32,13 +35,13 @@
             this.dispTopLabelRight = new System.Windows.Forms.Label();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ctrlButtonBar1 = new Allgemein.Controls.ctrlButtonBar();
-            this.ctrlPalette1 = new Wollsdorf.Spaltwaage.Controls.ctrlPalette();
-            this.ctrlPalette2 = new Wollsdorf.Spaltwaage.Controls.ctrlPalette();
-            this.ctrlPalette3 = new Wollsdorf.Spaltwaage.Controls.ctrlPalette();
-            this.ctrlPalette4 = new Wollsdorf.Spaltwaage.Controls.ctrlPalette();
-            this.ctrlPalette5 = new Wollsdorf.Spaltwaage.Controls.ctrlPalette();
-            this.ctrlPalette6 = new Wollsdorf.Spaltwaage.Controls.ctrlPalette();
+            this.ctrlButtonBar1 = new ctrlButtonBar();
+            this.ctrlPalette1 = new ctrlPalette();
+            this.ctrlPalette2 = new ctrlPalette();
+            this.ctrlPalette3 = new ctrlPalette();
+            this.ctrlPalette4 = new ctrlPalette();
+            this.ctrlPalette5 = new ctrlPalette();
+            this.ctrlPalette6 = new ctrlPalette();
             this.dispInfo = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer();
             this.dispErrorText = new System.Windows.Forms.Label();
@@ -193,15 +196,15 @@
 
         private System.Windows.Forms.Label dispTopLabelLeft;
         private System.Windows.Forms.Label dispTopLabelRight;
-        private Allgemein.Controls.ctrlButtonBar ctrlButtonBar1;
+        private ctrlButtonBar ctrlButtonBar1;
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Panel panel1;
-        private Wollsdorf.Spaltwaage.Controls.ctrlPalette ctrlPalette1;
-        private Wollsdorf.Spaltwaage.Controls.ctrlPalette ctrlPalette2;
-        private Wollsdorf.Spaltwaage.Controls.ctrlPalette ctrlPalette3;
-        private Wollsdorf.Spaltwaage.Controls.ctrlPalette ctrlPalette4;
-        private Wollsdorf.Spaltwaage.Controls.ctrlPalette ctrlPalette5;
-        private Wollsdorf.Spaltwaage.Controls.ctrlPalette ctrlPalette6;
+        private ctrlPalette ctrlPalette1;
+        private ctrlPalette ctrlPalette2;
+        private ctrlPalette ctrlPalette3;
+        private ctrlPalette ctrlPalette4;
+        private ctrlPalette ctrlPalette5;
+        private ctrlPalette ctrlPalette6;
         private System.Windows.Forms.Label dispInfo;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label dispErrorText;

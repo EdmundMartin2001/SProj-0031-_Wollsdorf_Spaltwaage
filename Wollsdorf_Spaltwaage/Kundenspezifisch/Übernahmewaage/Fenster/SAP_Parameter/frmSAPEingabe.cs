@@ -1,10 +1,15 @@
-﻿namespace Wollsdorf.Spaltwaage
-{
-    using System;
-    using System.Drawing;
-    using System.Windows.Forms;
-    using Allgemein;
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+using Wollsdorf_Spaltwaage.Allgemein.ButtonBar;
+using Wollsdorf_Spaltwaage.Allgemein.Forms;
+using Wollsdorf_Spaltwaage.Allgemein.ScaleEngine;
+using Wollsdorf_Spaltwaage.Allgemein.SQL;
+using Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Data;
+using Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Fenster.Palettenauswahl;
 
+namespace Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Fenster.SAP_Parameter
+{
     internal partial class frmSAPEingabe : Form
     {
         private cWiegung objWiegung;
@@ -26,7 +31,7 @@
 
         private void frmSAPEingabe_Load(object sender, EventArgs e)
         {
-            Allgemein.FormHelper.cFormStyle.FORM_LOAD(this, null);
+            cFormStyle.FORM_LOAD(this, null);
 
             this.dispTopLabelLeft.Text = this.objWiegung.objSettings.get_ArbeitsplatzName;
             this.Init_ButtonBar();
@@ -72,7 +77,7 @@
             myIcon = Wollsdorf_Spaltwaage.Properties.Resources.ico_ArrowRight;
             this.ctrlButtonBar1.Button_F4.Bild_Icon = myIcon;
 
-            this.ctrlButtonBar1.EventButtonClick += new Allgemein.Controls.ctrlButtonBar._EventButtonClick(ctrlButtonBar1_EventButtonClick);
+            this.ctrlButtonBar1.EventButtonClick += new ctrlButtonBar._EventButtonClick(ctrlButtonBar1_EventButtonClick);
         }
         private void ctrlButtonBar1_EventButtonClick(object sender, string fTaste, int iTastenCode, string fTag)
         {

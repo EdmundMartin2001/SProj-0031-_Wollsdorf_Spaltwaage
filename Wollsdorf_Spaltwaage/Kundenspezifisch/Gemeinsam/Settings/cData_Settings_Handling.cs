@@ -1,22 +1,18 @@
-﻿namespace Wollsdorf
-{
-    using System;
-    using System.Linq;
-    using System.Collections.Generic;
-    using System.Text;
-    using SMT_SQL_2V.DB.Private;
-    using Allgemein;
+﻿using System;
+using Wollsdorf_Spaltwaage.Allgemein.SQL;
 
+namespace Wollsdorf_Spaltwaage.Kundenspezifisch.Gemeinsam.Settings
+{
     internal class cData_Settings_Handling
     {
-        public static bool Save_Settings(Data.cData_Settings Data_Settings)
+        public static bool Save_Settings(cData_Settings Data_Settings)
         {
             bool bRet = false;
             cDB_SQL_CE qry = null;
 
             try
             {
-                qry = new SMT_SQL_2V.DB.Private.cDB_SQL_CE(SMT_SQL_2V.DB.cDB_Settings.CE_ConnectionString);
+                qry = new cDB_SQL_CE(cDB_Settings.CE_ConnectionString);
 
                 qry.Exec("UPDATE [SMT_SETTINGS] SET Field_Value = '" + ENUM_HELPER.Arbeitsplatztyp_EnumToInt(Data_Settings.Arbeitsplatztyp).ToString() + "' " +
                            "Where FieldName = 'Arbeitsplatztyp'");
@@ -110,14 +106,14 @@
             return bRet;
         }
 
-        public static bool Load_Settings(Data.cData_Settings Data_Settings)
+        public static bool Load_Settings(cData_Settings Data_Settings)
         {
             bool bRet = false;
             cDB_SQL_CE qry = null;
 
             try
             {
-                qry = new SMT_SQL_2V.DB.Private.cDB_SQL_CE(SMT_SQL_2V.DB.cDB_Settings.CE_ConnectionString);
+                qry = new cDB_SQL_CE(cDB_Settings.CE_ConnectionString);
 
                 if (qry.OPEN("SELECT Field_Value from [SMT_SETTINGS] Where FieldName = 'Arbeitsplatztyp'"))
                 {
@@ -385,7 +381,7 @@
 
                try
                {
-                   qry = new SMT_SQL_2V.DB.Private.cDB_SQL_CE(SMT_SQL_2V.DB.cDB_Settings.CE_ConnectionString);
+                   qry = new cDB_SQL_CE(cDB_Settings.CE_ConnectionString);
                    qry.ADD("Reihenfolge", 0);
                    qry.ADD("Fieldname",sName );
                    qry.ADD("Value_Type", "TX" );
@@ -425,14 +421,14 @@
         {
             return Convert.ToInt32(sValue);
         }
-        public static void SetSMTServiceMode(Data.cData_Settings Data_Settings)
+        public static void SetSMTServiceMode(cData_Settings Data_Settings)
         {
             cDB_SQL_CE qry = null;
             bool bServiceMode = false;
 
             try
             {
-                qry = new SMT_SQL_2V.DB.Private.cDB_SQL_CE(SMT_SQL_2V.DB.cDB_Settings.CE_ConnectionString);
+                qry = new cDB_SQL_CE(cDB_Settings.CE_ConnectionString);
 
                 if (!qry.OPEN("SELECT Field_Value from [SMT_SETTINGS] Where FieldName = 'ServiceMode'"))
                 {

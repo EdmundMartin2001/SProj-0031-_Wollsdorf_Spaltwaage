@@ -1,10 +1,6 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Text;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 
-namespace Allgemein.Helper
+namespace Wollsdorf_Spaltwaage.Allgemein.SystemHelper
 {
     internal class SystemHelper
     {

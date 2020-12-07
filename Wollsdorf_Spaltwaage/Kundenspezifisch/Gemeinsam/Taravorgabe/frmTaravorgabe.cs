@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using Allgemein;
+using Wollsdorf_Spaltwaage.Allgemein.ScaleEngine;
+using Wollsdorf_Spaltwaage.Allgemein.SQL;
 
-namespace Wollsdorf.Kundenspezifisch.Gemeinsam.Taravorgabe
+namespace Wollsdorf_Spaltwaage.Kundenspezifisch.Gemeinsam.Taravorgabe
 {
     public partial class frmTaravorgabe : Form
     {

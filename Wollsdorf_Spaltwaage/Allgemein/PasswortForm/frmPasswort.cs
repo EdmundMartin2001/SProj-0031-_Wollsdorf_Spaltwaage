@@ -1,9 +1,12 @@
-﻿namespace Allgemein
-{
-    using System;
-    using System.Drawing;
-    using System.Windows.Forms;
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+using Wollsdorf_Spaltwaage.Allgemein.ButtonBar;
+using Wollsdorf_Spaltwaage.Allgemein.Forms;
+using Wollsdorf_Spaltwaage.Allgemein.SQL;
 
+namespace Wollsdorf_Spaltwaage.Allgemein.PasswortForm
+{
     public partial class frmPasswort : Form
     {
         private string sSollPasswort;
@@ -28,7 +31,7 @@
         }
         private void frmPasswort_Load(object sender, EventArgs e)
         {
-            Allgemein.FormHelper.cFormStyle.FORM_LOAD(this, null);
+            cFormStyle.FORM_LOAD(this, null);
             
             this.Init_ButtonBar();
         }
@@ -62,7 +65,7 @@
                 ctrlButtonBar1.SET_BUTTON_TEXT(7, "", "§Free7");
             }
 
-            ctrlButtonBar1.EventButtonClick += new Allgemein.Controls.ctrlButtonBar._EventButtonClick(ctrlButtonBar1_EventButtonClick);
+            ctrlButtonBar1.EventButtonClick += new ctrlButtonBar._EventButtonClick(ctrlButtonBar1_EventButtonClick);
         }
         private void ctrlButtonBar1_EventButtonClick(object sender, string fTaste, int iTastenCode, string fTag)
         {

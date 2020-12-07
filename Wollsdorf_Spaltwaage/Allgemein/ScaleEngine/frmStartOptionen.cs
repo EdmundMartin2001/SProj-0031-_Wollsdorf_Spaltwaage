@@ -2,8 +2,9 @@
 using System.Drawing;
 using System.Windows.Forms;
 using MTTS.IND890.CE;
+using Wollsdorf_Spaltwaage.Kundenspezifisch;
 
-namespace Allgemein
+namespace Wollsdorf_Spaltwaage.Allgemein.ScaleEngine
 {
     internal partial class frmStartOptionen : Form
     {

@@ -1,7 +1,4 @@
-using System;
-using SMT_SQL_2V;
-
-namespace SMT_SQL_2V.DB
+namespace Wollsdorf_Spaltwaage.Allgemein.SQL
 {
 	internal class cDB_Settings
 	{

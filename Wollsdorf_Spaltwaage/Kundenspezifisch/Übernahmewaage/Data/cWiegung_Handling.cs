@@ -1,24 +1,19 @@
 ﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Text;
-using SMT_SQL_2V.DB.Private;
-using Wollsdorf;
-using Allgemein;
-using Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Data;
+using Wollsdorf_Spaltwaage.Allgemein.SQL;
+using Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Controls;
 
-namespace Wollsdorf.Spaltwaage
+namespace Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Data
 {
     internal class cWiegung_Handling
     {
-        public static bool Save_Palette(Controls.ctrlPalette PalettenUserControl)
+        public static bool Save_Palette(ctrlPalette PalettenUserControl)
         {
             bool bRet = false;
             cDB_SQL_CE qry = null;
 
             try
             {
-                qry = new SMT_SQL_2V.DB.Private.cDB_SQL_CE(SMT_SQL_2V.DB.cDB_Settings.CE_ConnectionString);
+                qry = new cDB_SQL_CE(cDB_Settings.CE_ConnectionString);
                 qry.ADD("Wiegung_Sum_Kg", PalettenUserControl.objBeladungsDaten.dWiegung_Gesamtgewicht);
                 qry.ADD("Wiegung_Sum_Stk", PalettenUserControl.objBeladungsDaten.iWiegung_Gesamtanzahl);
                 qry.UPDATE_THROW("SMT_WIEGUNG", "Wiegung_PalNr", PalettenUserControl.objBeladungsDaten.iPalettenNr, "Save_Palette", 99);
@@ -46,7 +41,7 @@ namespace Wollsdorf.Spaltwaage
 
             try
             {
-                qry = new SMT_SQL_2V.DB.Private.cDB_SQL_CE(SMT_SQL_2V.DB.cDB_Settings.CE_ConnectionString);
+                qry = new cDB_SQL_CE(cDB_Settings.CE_ConnectionString);
 
                 if (qry.OPEN("SELECT * from [SMT_WIEGUNG] Where Wiegung_PalNr = '" + BeladungsDaten.iPalettenNr.ToString() + "'"))
                 {
@@ -77,7 +72,7 @@ namespace Wollsdorf.Spaltwaage
 
             try
             {
-                qry = new SMT_SQL_2V.DB.Private.cDB_SQL_CE(SMT_SQL_2V.DB.cDB_Settings.CE_ConnectionString);
+                qry = new cDB_SQL_CE(cDB_Settings.CE_ConnectionString);
                 qry.ADD("Reihenfolge", 0);
                 qry.ADD("Fieldname", sName);
                 qry.ADD("Value_Type", "TX");

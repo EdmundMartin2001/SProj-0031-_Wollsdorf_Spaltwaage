@@ -1,9 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Allgemein
+﻿namespace Wollsdorf_Spaltwaage.Allgemein.Mettler
 {
     internal class IND890APIClientEnum
     {

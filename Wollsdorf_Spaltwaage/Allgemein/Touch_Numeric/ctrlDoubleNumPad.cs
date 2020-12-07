@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Linq;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Text;
-using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using Allgemein;
+using System.Windows.Forms;
+using Wollsdorf_Spaltwaage.Allgemein.SQL;
 
-namespace Allgemein.Controls
+namespace Wollsdorf_Spaltwaage.Allgemein.Touch_Numeric
 {
     public partial class ctrlDoubleNumPad : UserControl
     {

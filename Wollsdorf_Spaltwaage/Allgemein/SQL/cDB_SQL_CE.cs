@@ -1,14 +1,14 @@
-namespace SMT_SQL_2V.DB.Private
+using System;
+using System.Collections;
+using System.Data;
+using System.Data.SqlServerCe;
+using System.Diagnostics;
+using System.IO;
+using System.Windows.Forms;
+using Wollsdorf_Spaltwaage.Kundenspezifisch;
+
+namespace Wollsdorf_Spaltwaage.Allgemein.SQL
 {
-    using System;
-    using System.Collections;
-    using System.Data;
-    using System.Data.SqlServerCe;
-    using System.Diagnostics;
-    using System.IO;
-    using System.Windows.Forms;
-    using Allgemein;
-    
     public enum eSQLFieldeType
     {
         Bit = 0,
@@ -1400,7 +1400,7 @@ namespace SMT_SQL_2V.DB.Private
             sr.WriteLine ( "[INFO_HEADER]");
             sr.WriteLine ( "Erstellt=" + DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss") );
             sr.WriteLine ( "Version=" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString() );
-            sr.WriteLine ("Machinename=" + SMT_Standards.AppStandards.MachineName.ToUpper());
+            sr.WriteLine ("Machinename=" + AppStandards.MachineName.ToUpper());
             sr.WriteLine ( "\r\n\r\n" );
             
             #region Schreibe alle Tabellen mit ToUpper und Alpahbetisch geordnet

@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Linq;
-using System.Collections.Generic;
 using System.Windows.Forms;
+using Wollsdorf_Spaltwaage.Allgemein.SQL;
 
 namespace Wollsdorf
 {
@@ -19,7 +18,7 @@ namespace Wollsdorf
             //string m_customDBPath = @"\Storage Card\CustomNET\Data\smt_ind890_data.sdf";
             string m_customDBPath = sAppPath + @"\Data\smt_ind890_data.sdf";
 
-            SMT_SQL_2V.DB.cDB_Settings.CE_ConnectionString =
+            cDB_Settings.CE_ConnectionString =
                 m_customDBPath;
 
             //    string.Format("DataSource={0}", m_customDBPath);
@@ -32,7 +31,7 @@ namespace Wollsdorf
                 return;
             }
 
-            Allgemein.SiAuto.WriteErrorLog("StartUp", "", null);
+            SiAuto.WriteErrorLog("StartUp", "", null);
 
             //   Allgemein.FormHelper.cFullScreen f = new Allgemein.FormHelper.cFullScreen();
             //  f.SetFullScreen(true);
@@ -40,6 +39,7 @@ namespace Wollsdorf
             try
             {
                 Application.Run(new frmMain());
+                //Application.Run(new Form1());
             }
             catch (Exception ex)
             {

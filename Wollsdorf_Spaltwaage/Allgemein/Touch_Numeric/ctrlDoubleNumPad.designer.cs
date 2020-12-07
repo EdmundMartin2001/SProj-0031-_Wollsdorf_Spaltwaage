@@ -1,4 +1,6 @@
-﻿namespace Allgemein.Controls
+﻿using Wollsdorf_Spaltwaage.Allgemein.Button;
+
+namespace Wollsdorf_Spaltwaage.Allgemein.Touch_Numeric
 {
     partial class ctrlDoubleNumPad
     {
@@ -28,18 +30,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmdKeyComma = new Allgemein.Controls.ctrlButton();
-            this.cmdKeyBs = new Allgemein.Controls.ctrlButton();
-            this.cmdKey0 = new Allgemein.Controls.ctrlButton();
-            this.cmdKey3 = new Allgemein.Controls.ctrlButton();
-            this.cmdKey2 = new Allgemein.Controls.ctrlButton();
-            this.cmdKey1 = new Allgemein.Controls.ctrlButton();
-            this.cmdKey6 = new Allgemein.Controls.ctrlButton();
-            this.cmdKey5 = new Allgemein.Controls.ctrlButton();
-            this.cmdKey4 = new Allgemein.Controls.ctrlButton();
-            this.cmdKey9 = new Allgemein.Controls.ctrlButton();
-            this.cmdKey8 = new Allgemein.Controls.ctrlButton();
-            this.cmdKey7 = new Allgemein.Controls.ctrlButton();
+            this.cmdKeyComma = new ctrlButton();
+            this.cmdKeyBs = new ctrlButton();
+            this.cmdKey0 = new ctrlButton();
+            this.cmdKey3 = new ctrlButton();
+            this.cmdKey2 = new ctrlButton();
+            this.cmdKey1 = new ctrlButton();
+            this.cmdKey6 = new ctrlButton();
+            this.cmdKey5 = new ctrlButton();
+            this.cmdKey4 = new ctrlButton();
+            this.cmdKey9 = new ctrlButton();
+            this.cmdKey8 = new ctrlButton();
+            this.cmdKey7 = new ctrlButton();
             this.SuspendLayout();
             // 
             // cmdKeyComma
@@ -222,17 +224,17 @@
 
         #endregion
 
-        private global::Allgemein.Controls.ctrlButton cmdKeyComma;
-        private global::Allgemein.Controls.ctrlButton cmdKeyBs;
-        private global::Allgemein.Controls.ctrlButton cmdKey0;
-        private global::Allgemein.Controls.ctrlButton cmdKey3;
-        private global::Allgemein.Controls.ctrlButton cmdKey2;
-        private global::Allgemein.Controls.ctrlButton cmdKey1;
-        private global::Allgemein.Controls.ctrlButton cmdKey6;
-        private global::Allgemein.Controls.ctrlButton cmdKey5;
-        private global::Allgemein.Controls.ctrlButton cmdKey4;
-        private global::Allgemein.Controls.ctrlButton cmdKey9;
-        private global::Allgemein.Controls.ctrlButton cmdKey8;
-        private global::Allgemein.Controls.ctrlButton cmdKey7;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdKeyComma;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdKeyBs;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdKey0;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdKey3;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdKey2;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdKey1;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdKey6;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdKey5;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdKey4;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdKey9;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdKey8;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton cmdKey7;
     }
 }

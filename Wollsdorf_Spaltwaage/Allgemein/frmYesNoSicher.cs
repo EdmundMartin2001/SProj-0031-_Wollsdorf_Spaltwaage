@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
+using Wollsdorf_Spaltwaage.Kundenspezifisch;
 
-namespace Allgemein
+namespace Wollsdorf_Spaltwaage.Allgemein
 {
     public partial class frmYesNoSicher : Form
     {

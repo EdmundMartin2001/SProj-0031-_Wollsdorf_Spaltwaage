@@ -1,4 +1,4 @@
-﻿namespace Wollsdorf.Spaltwaage.Controls
+﻿namespace Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Controls
 {
     partial class ctrlPalette
     {

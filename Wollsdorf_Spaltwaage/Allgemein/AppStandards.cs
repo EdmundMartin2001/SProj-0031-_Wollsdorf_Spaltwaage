@@ -1,10 +1,6 @@
 using System;
-using System.Diagnostics;
-using System.Windows.Forms;
-using Microsoft.Win32;
-using Allgemein.Helper; 
 
-namespace SMT_SQL_2V.SMT_Standards
+namespace Wollsdorf_Spaltwaage.Allgemein
 {
 	internal class AppStandards
 	{
@@ -106,7 +102,7 @@ namespace SMT_SQL_2V.SMT_Standards
 					return _sDebugProgramFolder;
 				else
 				{
-                    return System.IO.Path.GetDirectoryName(SystemHelper.ExecutablePath) + @"\";
+                    return System.IO.Path.GetDirectoryName(SystemHelper.SystemHelper.ExecutablePath) + @"\";
 				}  
 			}
 		
@@ -120,7 +116,7 @@ namespace SMT_SQL_2V.SMT_Standards
 					return _sDebugProgramFolder + @"LayoutTemp\";
 				else
 				{
-                    return System.IO.Path.GetDirectoryName(SystemHelper.ExecutablePath) + @"\LayoutTemp\";
+                    return System.IO.Path.GetDirectoryName(SystemHelper.SystemHelper.ExecutablePath) + @"\LayoutTemp\";
 				}  
 			}
 		}
@@ -133,7 +129,7 @@ namespace SMT_SQL_2V.SMT_Standards
 					return _sDebugProgramFolder + @"Logfile\";
 				else
 				{
-                    return System.IO.Path.GetDirectoryName(SystemHelper.ExecutablePath) + @"\Logfile\";
+                    return System.IO.Path.GetDirectoryName(SystemHelper.SystemHelper.ExecutablePath) + @"\Logfile\";
 				}  
 			}
 		}
@@ -146,7 +142,7 @@ namespace SMT_SQL_2V.SMT_Standards
 					return _sDebugProgramFolder + @"ErrorLog\";
 				else
 				{
-                    return System.IO.Path.GetDirectoryName(SystemHelper.ExecutablePath) + @"\ErrorLog\";
+                    return System.IO.Path.GetDirectoryName(SystemHelper.SystemHelper.ExecutablePath) + @"\ErrorLog\";
 				}  
 			}
 		}
@@ -159,7 +155,7 @@ namespace SMT_SQL_2V.SMT_Standards
 					return _sDebugProgramFolder + @"ImportLog\";
 				else
 				{
-                    return System.IO.Path.GetDirectoryName(SystemHelper.ExecutablePath) + @"\ImportLog\";
+                    return System.IO.Path.GetDirectoryName(SystemHelper.SystemHelper.ExecutablePath) + @"\ImportLog\";
 				}  
 			}
 		}
@@ -180,7 +176,7 @@ namespace SMT_SQL_2V.SMT_Standards
 
 				foreach (string s in sEntwicklerPC )
 				{
-					if ( SMT_Standards.AppStandards.MachineName.ToUpper().Equals(s) ) 
+					if ( AppStandards.MachineName.ToUpper().Equals(s) ) 
 					{
 						ret = true;
 						break;

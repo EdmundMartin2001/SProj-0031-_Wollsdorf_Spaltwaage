@@ -1,4 +1,6 @@
-﻿namespace Allgemein
+﻿using Wollsdorf_Spaltwaage.Allgemein.ButtonBar;
+
+namespace Wollsdorf_Spaltwaage.Allgemein.PasswortForm
 {
     partial class frmPasswort
     {
@@ -33,8 +35,8 @@
             this.pnlTop = new System.Windows.Forms.Panel();
             this.dispTopLabelRight = new System.Windows.Forms.Label();
             this.dispTopLabelLeft = new System.Windows.Forms.Label();
-            this.ctrlNumPad1 = new Allgemein.Controls.ctrlNumPad();
-            this.ctrlButtonBar1 = new Allgemein.Controls.ctrlButtonBar();
+            this.ctrlNumPad1 = new global::Wollsdorf_Spaltwaage.Allgemein.Touch_Numeric.ctrlNumPad();
+            this.ctrlButtonBar1 = new ctrlButtonBar();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlTop.SuspendLayout();
             this.SuspendLayout();
@@ -133,13 +135,13 @@
 
         #endregion
 
-        private Allgemein.Controls.ctrlNumPad ctrlNumPad1;
+        private global::Wollsdorf_Spaltwaage.Allgemein.Touch_Numeric.ctrlNumPad ctrlNumPad1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Label dispTopLabelRight;
         private System.Windows.Forms.Label dispTopLabelLeft;
-        private Allgemein.Controls.ctrlButtonBar ctrlButtonBar1;
+        private ctrlButtonBar ctrlButtonBar1;
         private System.Windows.Forms.Panel panel1;
     }
 }

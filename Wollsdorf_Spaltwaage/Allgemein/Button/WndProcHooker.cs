@@ -1,11 +1,10 @@
-﻿namespace Allgemein.Controls
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Runtime.CompilerServices;
-    using System.Runtime.InteropServices;
-    using System.Windows.Forms;
+﻿using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
+namespace Wollsdorf_Spaltwaage.Allgemein.Button
+{
     internal class WndProcHooker
     {
         private static Dictionary<Control, HookedProcInformation> ctlDict = new Dictionary<Control, HookedProcInformation>();

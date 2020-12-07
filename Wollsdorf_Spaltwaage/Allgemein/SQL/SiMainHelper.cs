@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Text;
 using System.Diagnostics;
+using Wollsdorf_Spaltwaage.Kundenspezifisch;
 
-namespace Allgemein
+namespace Wollsdorf_Spaltwaage.Allgemein.SQL
 {
     internal class SiAuto
     {

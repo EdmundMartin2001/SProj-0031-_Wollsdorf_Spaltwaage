@@ -1,18 +1,28 @@
-﻿namespace Wollsdorf.Spaltwaage
-{
-    using System;
-    using System.Drawing;
-    using System.Windows.Forms;
-    using Allgemein;
-    using System.Collections.Generic;
-    using Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
+using Allgemein;
+using Wollsdorf_Spaltwaage.Allgemein.ButtonBar;
+using Wollsdorf_Spaltwaage.Allgemein.DIO_RS485;
+using Wollsdorf_Spaltwaage.Allgemein.Forms;
+using Wollsdorf_Spaltwaage.Allgemein.ScaleEngine;
+using Wollsdorf_Spaltwaage.Allgemein.SQL;
+using Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Controls;
+using Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Data;
+using Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Fenster.Wiegen;
+using System.Threading;
 
+namespace Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Fenster.Palettenauswahl
+{
     internal partial class frmPalettenauswahl : Form
     {
-        public cWiegung objWiegung;
-        private Allgemein.DIO.cSMT_DIO objDIO;
+        private ctrlPalette objSelPal;
 
-        private List<Controls.ctrlPalette> objPalettenUserControlList;
+        private cWiegung objWiegung;
+        private cSMT_DIO objDIO;
+
+        private readonly List<ctrlPalette> objPalettenUserControlList;
         private bool bLesemodus;
         private bool bStorno = false;
         private bool bAbschluss = false;
@@ -21,7 +31,7 @@
         {                         
             InitializeComponent();
 
-            this.objPalettenUserControlList = new List<Wollsdorf.Spaltwaage.Controls.ctrlPalette>();
+            this.objPalettenUserControlList = new List<ctrlPalette>();
             this.objPalettenUserControlList.Add(this.ctrlPalette1);
             this.objPalettenUserControlList.Add(this.ctrlPalette2);
             this.objPalettenUserControlList.Add(this.ctrlPalette3);
@@ -33,19 +43,28 @@
             this.timer1.Enabled = false;
             this.objWiegung = Wiegung;
             this.bLesemodus = lesemodus;
+            this.objSelPal = null;
 
-            this.objDIO = new Allgemein.DIO.cSMT_DIO();
+            this.objDIO = new cSMT_DIO();
         }
         private void frmPalettenauswahl_Load(object sender, EventArgs e)
         {
-            Allgemein.FormHelper.cFormStyle.FORM_LOAD(this, null);
+            cFormStyle.FORM_LOAD(this, null);
+            
+            // Optischen Anzeige das die Digital IO aktiv sind
             this.dispTopLabelLeft.Text = this.objWiegung.objSettings.get_ArbeitsplatzName;
+
             this.Init_ButtonBar();
             this.InitPaletten();
 
-            if (!this.objWiegung.objSettings.bDioeingänge)
+            if (this.objWiegung.objSettings.bDioeingänge)
             {
-                cGlobalScale.objCIND890APIClient.DiscreteIO.OnDIOInput += new MTTS.IND890.CE.CDiscreteIO.DIOInput(DiscreteIO_OnDIOInput);
+                this.dispTopLabelLeft.Text += " <Digial IO = Ein>";
+                cGlobalScale.objCIND890APIClient_DigitalIO.DiscreteIO.OnDIOInput += new MTTS.IND890.CE.CDiscreteIO.DIOInput(DiscreteIO_OnDIOInput);
+            }
+            else
+            {
+                this.dispTopLabelLeft.Text += " <Digial IO = Aus>";
             }
 
             this.timer2.Interval = 500;
@@ -54,30 +73,56 @@
         
         private void DiscreteIO_OnDIOInput(byte location, byte port, byte value)
         {
+            int iDigitalIOEingang = 0;
+
             if (!this.objWiegung.objSettings.bDioeingänge)
             {
                 return;
             }
 
-            switch (port)
+            if (value < 1)
+            {
+                return;
+            }
+
+            // Location 1 = RelaisBox1 mit IO 1 bis 4
+            // Location 2 = RelaisBox2 mit IO 5 bis 8
+            if (location == 2)
+            {
+                iDigitalIOEingang = (4 + value);
+            }
+            else
+            {
+                iDigitalIOEingang = value;
+            }
+
+            MessageBox.Show(">>>>>>>>>>>> Test IO (" + location.ToString() +") ===>" + value.ToString() + " ===>" + iDigitalIOEingang.ToString());
+
+            switch (iDigitalIOEingang)
             {
                 case 1:
-                    this.StarteWiegung(ref this.ctrlPalette1);
+                    this.objSelPal = this.ctrlPalette1;
+                    this.StarteWiegung(this);
                     break;
                 case 2:
-                    this.StarteWiegung(ref this.ctrlPalette2);
+                    this.objSelPal = this.ctrlPalette2;
+                    this.StarteWiegung(this);
                     break;
                 case 3:
-                    this.StarteWiegung(ref this.ctrlPalette3);
+                    this.objSelPal = this.ctrlPalette3;
+                    this.StarteWiegung(this);
                     break;
                 case 4:
-                    this.StarteWiegung(ref this.ctrlPalette4);
+                    this.objSelPal = this.ctrlPalette4;
+                    this.StarteWiegung(this);
                     break;
                 case 5:
-                    this.StarteWiegung(ref this.ctrlPalette5);
+                    this.objSelPal = this.ctrlPalette5;
+                    this.StarteWiegung(this);
                     break;
                 case 6:
-                    this.StarteWiegung(ref this.ctrlPalette6);
+                    this.objSelPal = this.ctrlPalette6;
+                    this.StarteWiegung(this);
                     break;
             }
         }
@@ -110,12 +155,11 @@
             this.ctrlPalette5.objBeladungsDaten = InitBeladungsDaten(4);
             this.ctrlPalette6.objBeladungsDaten = InitBeladungsDaten(5);
 
-            foreach (Wollsdorf.Spaltwaage.Controls.ctrlPalette AktCtrl in this.objPalettenUserControlList)
+            foreach (ctrlPalette AktCtrl in this.objPalettenUserControlList)
             {
                 AktCtrl.UpdateCtrl();
             }                        
         }
-
         private void Init_ButtonBar()
         {
             this.ctrlButtonBar1.DISP_PAGE(1);
@@ -143,7 +187,7 @@
             myIcon = Wollsdorf_Spaltwaage.Properties.Resources.ico_Delete_2;
             this.ctrlButtonBar1.Button_F6.Bild_Icon = myIcon;
 
-            this.ctrlButtonBar1.EventButtonClick += new Allgemein.Controls.ctrlButtonBar._EventButtonClick(ctrlButtonBar1_EventButtonClick);
+            this.ctrlButtonBar1.EventButtonClick += new ctrlButtonBar._EventButtonClick(ctrlButtonBar1_EventButtonClick);
         }
         private void ctrlButtonBar1_EventButtonClick(object sender, string fTaste, int iTastenCode, string fTag)
         {
@@ -201,14 +245,13 @@
                 Application.DoEvents();
 
                 System.Threading.Thread.Sleep(1000);
-                //this.dispErrorText.Visible = false;
             }
             catch (Exception)
             {
             }
         }
  
-        private void Wiegung_Storno(ref Controls.ctrlPalette SelControl) 
+        private void Wiegung_Storno(ref ctrlPalette SelControl) 
         {
             this.ShowStatus("Wiegung wird storniert!");
 
@@ -229,7 +272,7 @@
 
             this.ShowStatus("Bereit...");
         }
-        private void Wiegung_Abschluss(ref Controls.ctrlPalette SelControl) 
+        private void Wiegung_Abschluss(ref ctrlPalette SelControl) 
         {
             this.ShowStatus("Palette wird abgeschlossen!");
 
@@ -251,7 +294,7 @@
             SelControl.ResetButton();
         }
 
-        private bool StarteDrucken(ref Controls.ctrlPalette PalettenUserControl) 
+        private bool StarteDrucken(ref ctrlPalette PalettenUserControl) 
         {
             bool bRet = false;
 
@@ -308,85 +351,91 @@
 
             return bRet;
         }
-        private void StarteWiegung(ref Controls.ctrlPalette SelControl)
+        private void StarteWiegung(object sender)
         {
-            // Kurze Warzezeit damit Meldungen sich nicht überlagern
-            //do
-            //{
-            //    // Warte bis Aufrufer-Timer beendet ist
-            //    Application.DoEvents();
-            //}
-            //while (timer1.Enabled == true);
+            if (this.InvokeRequired)
+            {
+                this.BeginInvoke(new WaitCallback(StarteWiegung), this);
+            }
+            else
+            {
+                this.StarteWiegung_go();
+            }
+        }
 
+        private void StarteWiegung_go()
+        {            
             if (this.bAbschluss == true)
             {
-                if (SelControl.objBeladungsDaten.dWiegung_Gesamtgewicht > 0)
+                if (this.objSelPal.objBeladungsDaten.dWiegung_Gesamtgewicht > 0)
                 {
-                    this.Wiegung_Abschluss(ref SelControl);                    
+                    this.Wiegung_Abschluss(ref this.objSelPal);                    
                 }
                 this.bAbschluss = false;
-                SelControl.ResetButton();
+                this.objSelPal.ResetButton();
             }
             else if (this.bStorno == true)
             {
-                this.Wiegung_Storno(ref SelControl);
+                this.Wiegung_Storno(ref this.objSelPal);
                 this.bStorno = false;
             }
-
-           
-
             else
             {
                 #region Wiegung durchführen
                 this.ShowStatus("Starte Wiegung!");
-                frmWiegen fWiegen = new frmWiegen(ref objWiegung, ref SelControl);
+                frmWiegen fWiegen = new frmWiegen(ref objWiegung, ref this.objSelPal);
                 fWiegen.ShowDialog();
 
                 if (fWiegen.DialogResult == DialogResult.OK)
                 {
-                    SelControl.UpdateCtrl();
+                    this.objSelPal.UpdateCtrl();
 
                     // Wenn die Maximalbeladung einer Palette erreicht ist, dann wird ein Etikett ausgedruckt
                     // und die Summe gelöscht
-                    if (SelControl.objBeladungsDaten.dWiegung_Gesamtgewicht >= this.objWiegung.objSettings.dPalettenMax)
+                    if (this.objSelPal.objBeladungsDaten.dWiegung_Gesamtgewicht >= this.objWiegung.objSettings.dPalettenMax)
                     {
-                        this.StarteDrucken(ref SelControl);
+                        this.StarteDrucken(ref this.objSelPal);
                     }
 
-                    SelControl.ResetButton(); // Farbe der Buttons aufheben
+                    this.objSelPal.ResetButton(); // Farbe der Buttons aufheben
                 }
                 #endregion
             }
 
-            SelControl.ResetButton();
+            this.objSelPal.ResetButton();
             this.ShowStatus("Bereit...");
         }
 
         private void ctrlPalette1_Click(object sender, EventArgs e)
         {
-            this.StarteWiegung(ref this.ctrlPalette1);           
+            this.objSelPal = this.ctrlPalette1;
+            this.StarteWiegung(this);           
         }
         private void ctrlPalette2_Click(object sender, EventArgs e)
         {
-            this.StarteWiegung(ref this.ctrlPalette2);           
+            this.objSelPal = this.ctrlPalette2;
+            this.StarteWiegung(this);
         }
         private void ctrlPalette3_Click(object sender, EventArgs e)
         {
-            this.StarteWiegung(ref this.ctrlPalette3);           
+            this.objSelPal = this.ctrlPalette3;
+            this.StarteWiegung(this);
         }
         private void ctrlPalette4_Click(object sender, EventArgs e)
         {
-            this.StarteWiegung(ref this.ctrlPalette4);           
+            this.objSelPal = this.ctrlPalette4;
+            this.StarteWiegung(this);
         }
         private void ctrlPalette5_Click(object sender, EventArgs e)
         {
-            this.StarteWiegung(ref this.ctrlPalette5);           
+            this.objSelPal = this.ctrlPalette5;
+            this.StarteWiegung(this);
         }
         private void ctrlPalette6_Click(object sender, EventArgs e)
         {
-            this.StarteWiegung(ref this.ctrlPalette6);           
+            this.objSelPal = this.ctrlPalette6;
+            this.StarteWiegung(this);           
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.ShowStatus("Bereit...");
@@ -397,18 +446,5 @@
 
 
         }
-
-        //private void timer2_Tick(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-
-        //    }
-        //    catch (Exception ex) 
-        //    {
-                
-        //        throw;
-        //    }
-        //}
     }
 }

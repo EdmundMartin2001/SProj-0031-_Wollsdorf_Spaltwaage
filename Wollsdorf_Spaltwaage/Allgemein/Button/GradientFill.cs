@@ -1,8 +1,8 @@
-﻿namespace Allgemein.Controls
-{
-    using System;
-    using System.Drawing;
+﻿using System;
+using System.Drawing;
 
+namespace Wollsdorf_Spaltwaage.Allgemein.Button
+{
     public sealed class GradientFill
     {
         public static bool Fill(Graphics gr, Rectangle rc, Color startColor, Color endColor, FillDirection fillDir)

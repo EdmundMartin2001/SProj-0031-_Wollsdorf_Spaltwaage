@@ -1,34 +1,32 @@
-﻿namespace Allgemein
-{
-    using System;
-    using System.Windows.Forms;
-    using MTTS.IND890.CE;
-    using System.Diagnostics;
+﻿using System;
+using System.Windows.Forms;
+using MTTS.IND890.CE;
+using Wollsdorf_Spaltwaage.Allgemein.SQL;
 
+namespace Wollsdorf_Spaltwaage.Allgemein.ScaleEngine
+{
     internal class cGlobalScale
     {
-        public static cScale objSCALE;
-        public static MTTS.IND890.CE.CIND890APIClient objCIND890APIClient;
-        public static MTTS.IND890.CE.CInterface objRS232_X5;
+        private static cScale objSCALE;
 
-        //public static Allgemein.DIO.cSMT_DIO objDIO;
+        public static CIND890APIDIOClient objCIND890APIClient_DigitalIO;
+        public static CIND890APITerminalClient objCIND890APITerminalClient;
+        public static CIND890APIScaleClient objCIND890APIClient;
+        public static CIND890APIWeighingClient m_APIWeighingClient;
+        public static CInterface objRS232_X5;
 
-        public static bool STARTE_CLIENT()
+        public static void create_client_objects()
         {
-            bool bRet = false;
-
             try
             {
-                objCIND890APIClient = new MTTS.IND890.CE.CIND890APIClient();
-                
-                bRet = objCIND890APIClient != null;
+                objCIND890APIClient = new CIND890APIScaleClient();                
+                objCIND890APITerminalClient = new CIND890APITerminalClient();
+                objCIND890APIClient_DigitalIO = new CIND890APIDIOClient();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "GlobalScale.create_client_objects");
             }
-
-            return bRet;
         }
         public static bool STARTE_SCALE()
         {
@@ -39,15 +37,12 @@
                 objSCALE = new cScale();
                 bRet= objSCALE.Start();
                 
-
-                objRS232_X5 = objCIND890APIClient.Interface[5]; //x5
+                objRS232_X5 = objCIND890APIClient.Interface[5];
                 objRS232_X5.DataMode = MTTS.IND890.CE.CInterface.enumDataMode.MODE_STRING;
-
- 
             }
             catch (Exception ex)
             {
-                SiAuto.LogException(ex);
+                MessageBox.Show(ex.Message, "GlobalScale (a)");
                 throw;
             }
 
@@ -55,27 +50,12 @@
         }
         public static void BEENDE_SCALE()
         {
-            try
+            if ( objSCALE != null)
             {
-                if ( objSCALE != null)
-                {
-                    objSCALE.Close();
-                    objSCALE = null;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw;
+                objSCALE.Close();
+                objSCALE = null;
             }
         }
-
-        //public static void INI_DIO()
-        //{
-        //    //if (objDIO == null)
-        //    //{
-        //    //    objDIO = new Allgemein.DIO.cSMT_DIO();
-        //    //}
-        //}
 
         public static void Hide_Scale()
         {

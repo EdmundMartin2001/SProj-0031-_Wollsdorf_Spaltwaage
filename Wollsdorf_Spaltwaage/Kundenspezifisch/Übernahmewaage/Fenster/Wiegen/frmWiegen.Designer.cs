@@ -1,4 +1,6 @@
-﻿namespace Wollsdorf.Spaltwaage
+﻿using Wollsdorf_Spaltwaage.Allgemein.Button;
+
+namespace Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Fenster.Wiegen
 {
     partial class frmWiegen
     {
@@ -35,8 +37,9 @@
             this.dispWaitText = new System.Windows.Forms.Label();
             this.dispErrorText = new System.Windows.Forms.Label();
             this.dispStatus = new System.Windows.Forms.Label();
-            this.cmdCancel = new Allgemein.Controls.ctrlButton();
-            this.cmdRetry = new Allgemein.Controls.ctrlButton();
+            this.cmdCancel = new Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton();
+            this.cmdRetry = new Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton();
+            this.cmdSimu1 = new Wollsdorf_Spaltwaage.Allgemein.Button.ctrlButton();
             this.SuspendLayout();
             // 
             // label1
@@ -52,7 +55,7 @@
             this.dispWaitText.BackColor = System.Drawing.Color.CornflowerBlue;
             this.dispWaitText.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold);
             this.dispWaitText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.dispWaitText.Location = new System.Drawing.Point(14, 195);
+            this.dispWaitText.Location = new System.Drawing.Point(14, 206);
             this.dispWaitText.Name = "dispWaitText";
             this.dispWaitText.Size = new System.Drawing.Size(534, 87);
             this.dispWaitText.Text = "Bitte warten Sie ...";
@@ -64,7 +67,7 @@
             this.dispErrorText.BackColor = System.Drawing.Color.Red;
             this.dispErrorText.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold);
             this.dispErrorText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.dispErrorText.Location = new System.Drawing.Point(13, 197);
+            this.dispErrorText.Location = new System.Drawing.Point(14, 208);
             this.dispErrorText.Name = "dispErrorText";
             this.dispErrorText.Size = new System.Drawing.Size(534, 85);
             this.dispErrorText.Text = "?";
@@ -105,13 +108,27 @@
             this.cmdRetry.Text = "Retry";
             this.cmdRetry.Click += new System.EventHandler(this.cmdRetry_Click);
             // 
+            // cmdSimu1
+            // 
+            this.cmdSimu1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdSimu1.Bild_Icon = ((System.Drawing.Icon)(resources.GetObject("cmdSimu1.Bild_Icon")));
+            this.cmdSimu1.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.cmdSimu1.ForeColor = System.Drawing.Color.White;
+            this.cmdSimu1.Location = new System.Drawing.Point(670, 119);
+            this.cmdSimu1.Name = "cmdSimu1";
+            this.cmdSimu1.Size = new System.Drawing.Size(126, 73);
+            this.cmdSimu1.TabIndex = 14;
+            this.cmdSimu1.Text = "Retry";
+            this.cmdSimu1.Click += new System.EventHandler(this.cmdsimuW1_Click);
+            // 
             // frmWiegen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(837, 284);
+            this.ClientSize = new System.Drawing.Size(837, 302);
+            this.Controls.Add(this.cmdSimu1);
             this.Controls.Add(this.cmdRetry);
             this.Controls.Add(this.cmdCancel);
             this.Controls.Add(this.dispStatus);
@@ -134,7 +151,8 @@
         private System.Windows.Forms.Label dispWaitText;
         private System.Windows.Forms.Label dispErrorText;
         private System.Windows.Forms.Label dispStatus;
-        private Allgemein.Controls.ctrlButton cmdCancel;
-        private Allgemein.Controls.ctrlButton cmdRetry;
+        private ctrlButton cmdCancel;
+        private ctrlButton cmdRetry;
+        private ctrlButton cmdSimu1;
     }
 }

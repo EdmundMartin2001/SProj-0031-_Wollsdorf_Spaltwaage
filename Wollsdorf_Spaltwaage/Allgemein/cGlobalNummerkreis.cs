@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Text;
-using SMT_SQL_2V.DB.Private;
+using Wollsdorf_Spaltwaage.Allgemein.SQL;
 
 namespace Allgemein
 {
@@ -18,7 +15,7 @@ namespace Allgemein
             int iRet = 0;
             try
             {
-                qry = new SMT_SQL_2V.DB.Private.cDB_SQL_CE(SMT_SQL_2V.DB.cDB_Settings.CE_ConnectionString);
+                qry = new cDB_SQL_CE(cDB_Settings.CE_ConnectionString);
 
                 if (qry.OPEN(sSQL))
                 {
@@ -59,7 +56,7 @@ namespace Allgemein
             int iRet = 0;
             try
             {
-                qry = new SMT_SQL_2V.DB.Private.cDB_SQL_CE(SMT_SQL_2V.DB.cDB_Settings.CE_ConnectionString);
+                qry = new cDB_SQL_CE(cDB_Settings.CE_ConnectionString);
 
                 if (qry.OPEN(sSQL))
                 {
@@ -92,7 +89,7 @@ namespace Allgemein
             try
             {
                 sSQL = "UPDATE [SMT_SETTINGS] SET Field_Value = '" + FortNr.ToString() + "' Where FieldName = 'Nummernkreis1'";
-                qry = new SMT_SQL_2V.DB.Private.cDB_SQL_CE(SMT_SQL_2V.DB.cDB_Settings.CE_ConnectionString);
+                qry = new cDB_SQL_CE(cDB_Settings.CE_ConnectionString);
                 
                 qry.Exec(sSQL);
             }

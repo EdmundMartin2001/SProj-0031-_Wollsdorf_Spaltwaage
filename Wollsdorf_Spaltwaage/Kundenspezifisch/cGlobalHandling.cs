@@ -1,11 +1,15 @@
-﻿namespace Allgemein
+﻿using System;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
+using Allgemein;
+using Wollsdorf_Spaltwaage.Allgemein;
+using Wollsdorf_Spaltwaage.Allgemein.PasswortForm;
+using Wollsdorf_Spaltwaage.Allgemein.ScaleEngine;
+using Wollsdorf_Spaltwaage.Allgemein.SQL;
+
+namespace Wollsdorf_Spaltwaage.Kundenspezifisch
 {
-    using System;
-    using System.IO;
-    using System.Runtime.InteropServices;
-    using System.Windows.Forms;
-    using System.Diagnostics;
-    
     internal class cGlobalHandling
     {
 
@@ -29,19 +33,19 @@
         }
         public static void MessageBox(string MessageText, string Caption)
         {
-            Allgemein.frmInfoDlg f = new frmInfoDlg(MessageText);
+            global::Allgemein.frmInfoDlg f = new frmInfoDlg(MessageText);
             f.Text = Caption;
             f.ShowDialog();
         }
         public static DialogResult MessageBoxYesNo(string MessageText, string Caption)
         {
-            Allgemein.frmYesNo f = new frmYesNo(MessageText);
+            frmYesNo f = new frmYesNo(MessageText);
             f.Text = Caption;
             return f.ShowDialog();
         }
         public static DialogResult MessageBoxYesNoSicher(string MessageText, string Caption)
         {
-            Allgemein.frmYesNoSicher f = new frmYesNoSicher(MessageText);
+            frmYesNoSicher f = new frmYesNoSicher(MessageText);
             f.Text = Caption;
             return f.ShowDialog();
         }
@@ -167,7 +171,7 @@
             {
                 Trace.Write(SendTxt);
 
-                byte[] encodingBytes = System.Text.Encoding.Default.GetBytes(SendTxt);                
+                byte[] encodingBytes = System.Text.Encoding.Default.GetBytes(SendTxt);
                 cGlobalScale.objRS232_X5.SendBytes(encodingBytes, encodingBytes.Length);
             }
             catch (Exception ex)

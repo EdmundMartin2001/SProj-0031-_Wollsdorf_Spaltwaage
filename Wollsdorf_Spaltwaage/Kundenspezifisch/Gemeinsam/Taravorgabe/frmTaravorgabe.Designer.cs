@@ -1,4 +1,7 @@
-﻿namespace Wollsdorf.Kundenspezifisch.Gemeinsam.Taravorgabe
+﻿using Wollsdorf_Spaltwaage.Allgemein.Button;
+using Wollsdorf_Spaltwaage.Allgemein.Touch_Numeric;
+
+namespace Wollsdorf_Spaltwaage.Kundenspezifisch.Gemeinsam.Taravorgabe
 {
     partial class frmTaravorgabe
     {
@@ -31,9 +34,9 @@
             this.tbTara = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ctrlDoubleNumPad1 = new Allgemein.Controls.ctrlDoubleNumPad();
-            this.cmdCancel = new Allgemein.Controls.ctrlButton();
-            this.cmdOK = new Allgemein.Controls.ctrlButton();
+            this.ctrlDoubleNumPad1 = new ctrlDoubleNumPad();
+            this.cmdCancel = new ctrlButton();
+            this.cmdOK = new ctrlButton();
             this.dispWaitText = new System.Windows.Forms.Label();
             this.dispErrorText = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -146,9 +149,9 @@
         private System.Windows.Forms.TextBox tbTara;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private Allgemein.Controls.ctrlButton cmdOK;
-        private Allgemein.Controls.ctrlButton cmdCancel;
-        private Allgemein.Controls.ctrlDoubleNumPad ctrlDoubleNumPad1;
+        private ctrlButton cmdOK;
+        private ctrlButton cmdCancel;
+        private ctrlDoubleNumPad ctrlDoubleNumPad1;
         private System.Windows.Forms.Label dispWaitText;
         private System.Windows.Forms.Label dispErrorText;
     }

@@ -1,8 +1,9 @@
-﻿namespace Allgemein
-{
-    using System;
-    using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
+using Wollsdorf_Spaltwaage.Kundenspezifisch;
 
+namespace Wollsdorf_Spaltwaage.Allgemein
+{
     internal partial class frmYesNo : Form
     {
         public frmYesNo(string sInfoText)

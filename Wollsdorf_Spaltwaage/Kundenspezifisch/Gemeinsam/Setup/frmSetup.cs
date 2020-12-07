@@ -1,20 +1,24 @@
-﻿namespace Wollsdorf
-{
-    using System;
-    using System.Drawing;
-    using System.Windows.Forms;
-    using Allgemein;
-    using MTTS.IND890.CE;
-    using Wollsdorf.Spaltwaage;
-    using System.Runtime.InteropServices;
-using SMT_SQL_2V.DB.Private;
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+using MTTS.IND890.CE;
+using Wollsdorf.Spaltwaage;
+using Wollsdorf_Spaltwaage.Allgemein.ButtonBar;
+using Wollsdorf_Spaltwaage.Allgemein.DIO_RS485;
+using Wollsdorf_Spaltwaage.Allgemein.Forms;
+using Wollsdorf_Spaltwaage.Allgemein.ScaleEngine;
+using Wollsdorf_Spaltwaage.Allgemein.SQL;
+using Wollsdorf_Spaltwaage.Kundenspezifisch.Gemeinsam.Settings;
+using Wollsdorf_Spaltwaage.Kundenspezifisch.Übernahmewaage.Data;
 
+namespace Wollsdorf_Spaltwaage.Kundenspezifisch.Gemeinsam.Setup
+{
     internal partial class frmSetup : Form
     {
         private string sInputTag;
-        private Wollsdorf.Spaltwaage.cWiegung objWiegung;
+        private cWiegung objWiegung;
 
-        public frmSetup(ref Wollsdorf.Spaltwaage.cWiegung Wiegung)
+        public frmSetup(ref cWiegung Wiegung)
         {
             InitializeComponent();
 
@@ -87,7 +91,7 @@ using SMT_SQL_2V.DB.Private;
 
         private void frmSetup_Load(object sender, EventArgs e)
         {
-            Allgemein.FormHelper.cFormStyle.FORM_LOAD(this, null);
+            cFormStyle.FORM_LOAD(this, null);
             this.dispTopLabelLeft.Text = this.objWiegung.objSettings.get_ArbeitsplatzName;
             this.Init_ButtonBar();
             this.Class2Gui(); 
@@ -116,7 +120,7 @@ using SMT_SQL_2V.DB.Private;
             myIcon = Wollsdorf_Spaltwaage.Properties.Resources.ico_Print;
             ctrlButtonBar1.Button_F7.Bild_Icon = myIcon;
 
-            ctrlButtonBar1.EventButtonClick += new Allgemein.Controls.ctrlButtonBar._EventButtonClick(ctrlButtonBar1_EventButtonClick);        
+            ctrlButtonBar1.EventButtonClick += new ctrlButtonBar._EventButtonClick(ctrlButtonBar1_EventButtonClick);        
         }
 
         private void ctrlButtonBar1_EventButtonClick(object sender, string fTaste, int iTastenCode, string fTag)
@@ -133,8 +137,7 @@ using SMT_SQL_2V.DB.Private;
                         this.Save_Settings();
                         break;
                     case "§DIOTEST":
-                        frmDIOTest fdio = new frmDIOTest();
-                        fdio.ShowDialog();
+                        this.Starte_DIO_Test();
                         break;
                     case "§DRUCKERTESTKURZ":
                         this.Starte_Testdruck_Kurz();
@@ -146,6 +149,75 @@ using SMT_SQL_2V.DB.Private;
             catch (Exception ex)
             {
                 SiAuto.LogException("ctrlButtonBar1_EventButtonClick4", ex);
+            }
+        }
+
+        private void Starte_DIO_Test()
+        {
+            #region Phase 1
+            try
+            {
+                CScaleWeight sw = cGlobalScale.GetDynamic();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "DIO Test Phase 1");
+            }
+            #endregion
+
+            #region Phase 2
+            try
+            {
+                CWeight w = cGlobalScale.objCIND890APIClient.CurrentScale.DisplayWeight;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "DIO Test Phase 2");
+            }
+            #endregion
+
+            #region Phase 3
+            try
+            {
+                CDiscreteIO oDiscreteIO = cGlobalScale.objCIND890APIClient_DigitalIO.DiscreteIO;
+
+                if (oDiscreteIO == null)
+                {
+                    MessageBox.Show("DIO NULL", "DIO Test Phase 3>>");
+                }
+
+                //for (int iLocation = 0; iLocation < 10; iLocation++)
+                //{
+
+                //    #region Phase 4
+                //    try
+                //    {
+                //        if (oDiscreteIO != null)
+                //        {
+                //            oDiscreteIO.WriteToDIO((byte)iLocation, 5, 0);
+                //        }
+                //    }
+                //    catch (Exception ex)
+                //    {
+                //        MessageBox.Show(ex.Message, iLocation.ToString() + ">>> DIO Test Phase 4");
+                //    }
+                //    #endregion
+                //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "DIO Test Phase 3");
+            }
+            #endregion
+
+            try
+            {
+                var fdio = new frmDIOTest();
+                fdio.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "DIO Test Start");
             }
         }
 
@@ -470,7 +542,7 @@ using SMT_SQL_2V.DB.Private;
                 try
                 {
                     string sSQL = "DELETE FROM [SMT_SALZ] ";
-                    qry = new SMT_SQL_2V.DB.Private.cDB_SQL_CE(SMT_SQL_2V.DB.cDB_Settings.CE_ConnectionString);
+                    qry = new cDB_SQL_CE(cDB_Settings.CE_ConnectionString);
                     qry.Exec(sSQL);                               
                 }
                 catch (Exception ex)
@@ -499,7 +571,7 @@ using SMT_SQL_2V.DB.Private;
                 try
                 {
                     string sSQL = "DELETE FROM [SMT_WAAGE] ";
-                    qry = new SMT_SQL_2V.DB.Private.cDB_SQL_CE(SMT_SQL_2V.DB.cDB_Settings.CE_ConnectionString);
+                    qry = new cDB_SQL_CE(cDB_Settings.CE_ConnectionString);
                     qry.Exec(sSQL);
                 }
                 catch (Exception ex)
